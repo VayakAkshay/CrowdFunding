@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  background-color: #f3f2ef;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+.container{
+    height: 100vh;
+    width: 37%;
+    margin-top: 100px;
+    border: 0.1px solid #f3f2ef;
+}
+.container .header{
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 36.5%;
+  margin-left: -15px;
+  background-color: #f3f2ef;
+  margin-top: -1px;
+  cursor:unset;
+  overflow: scroll;
+}
+.header::-webkit-scrollbar {
+  display: none;
+}
+.header {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+.container .header button{
+  background-color: transparent;
+  color: black;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.container .content{
+  height: 60px;
+  margin-top: 80px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content .profile{
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content input{
+  height: 40px;
+  width: 400px;
+  margin-right: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.container .contain{
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.container .contain .profile-data{
+  height: 50px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.container .contain .profile-data .profile-img{
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.container .contain .profile-data .name{
+  height: 40px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contain .content-data{
+  height: auto;
+}
+.container .contain .content-data .main-content{
+  height: auto;
+  overflow: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  margin-left: 10px;
+}
+
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+.container .contain .content-data .content-img{
+  height: 100%;
+  width: 100%;
+}
+.container .contain .content-data .content-img img{
+  height: 100%;
+  width: 100%;
+}
+.container .contain .content-social{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .contain .content-social .like-btn{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contain .content-social .like-btn i{
+  cursor: pointer;
+}
+.container .contain .content-social .like-btn .fa {
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container .contain .content-social .like-btn .fa:hover {
+  color: darkblue;
+}
+.container .contain .content-social .comment-btn{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contain .content-social .comment-btn i{
+  cursor: pointer;
+}
+.container .contain .content-social .share-btn{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contain .content-social .share-btn i{
+  cursor: pointer;
+}
+.container .contain .comment_part{
+  max-height: auto;
+  overflow: scroll;
+  display: none;
+  overflow-x: hidden;
+}
+.comment_part::-webkit-scrollbar {
+  display: none;
+}
+.container .contain .comment_part .add_comment{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contain .comment_part .add_comment input{
+  height: 35px;
+  width: 300px;
+  margin-right: 20px;
+  border: 0.5px solid black;
+  border-radius: 20px;
+}
+.container .contain .comment_part .comments{
+  height: 100px;
+}
+.container .contain .comment_part .comments .user_desk{
+  height: 50px;
+  display: flex;
+  align-items: center;;
+}
+.container .contain .comment_part .comments .comment-content{
+  height: auto;
+  padding: 5px;
+}
+.container .none_header{
+  position: relative;
+  display: none;
+}
+@media screen and (max-width: 1200px){
+  .container{
+    width: 40%;
+  }
+  .container .header{
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1100px){
+  .container{
+    width: 45%;
+  }
+  .container .header{
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1000px){
+  .container{
+    width: 50%;
+  }
+  .container .header{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 900px){
+  .container{
+    width: 55%;
+  }
+  .container .header{
+    width: 55%;
+  }
+}
+@media screen and (max-width: 800px){
+  .container{
+    width: 60%;
+  }
+  .container .header{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 740px){
+  .container{
+    width: 65%;
+  }
+  .container .header{
+    width: 65%;
+  }
+}
+@media screen and (max-width: 680px){
+  .container{
+    width: 70%;
+  }
+  .container .header{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 630px){
+  .container{
+    width: 80%;
+  }
+  .container .header{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px){
+  .container{
+    width: 90%;
+  }
+  .container .header{
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px){
+  .container{
+    width: 100%;
+  }
+  .container .header{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 450px){
+  .container .contain .comment_part .add_comment{
+    height: 100px;
+    padding: 10px;
+    justify-content: unset;
+    align-items:unset;
+  }
+  .container .contain .comment_part .add_comment button{
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 450px){
+  .container .contain .comment_part .add_comment input{
+    width: 100%;
+  }
+}

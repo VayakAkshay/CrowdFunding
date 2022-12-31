@@ -1,0 +1,143 @@
+{% extends "Homepage/basic.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %} Contact - Crowdfunding {% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    {% block style %}
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: white;
+        }
+        .container
+        {
+          width: 50%;
+          margin-top: 200px;
+        }
+        footer{
+          height: 300px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: black;
+          margin: 20px;
+          border: none;
+          border-radius: 20px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        footer .logopart{
+          height: 60%;
+          width: 50%;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        footer .socialmedia{
+          height: 60%;
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        footer .socialmedia a{
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          margin: 20px;
+        }
+        footer .socialmedia a:hover{
+          color: blueviolet;
+        }
+        footer .policy{
+          height: auto;
+          width: 100%;
+          color: white;
+          padding: 20px;
+        }
+        @media screen and (max-width: 700px){
+          .container{
+            width: 70%;
+          }
+        }
+        @media screen and (max-width : 600px) {
+          footer{
+            height: 350px;
+          }
+          footer .logopart{
+            height: 20%;
+            width: 100%;
+          }
+          footer .socialmedia{
+            height: 10%;
+            width: 100%;
+          }
+        }
+        @media screen and (max-width: 500px){
+          .container{
+            width: 90%;
+          }
+        }
+        @media screen and (max-width : 400px) {
+          footer{
+            height: 450px;
+          }
+        }
+        @media screen and (max-width: 300px){
+          .container{
+            width: 100%;
+          }
+        }
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    <div class="container">
+      <form action="/contact/" method="post">{% csrf_token %}
+        <div class="mb-3">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lname" name="lname" required>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="" name="email" placeholder="name@example.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Enter Message</label>
+          <textarea class="form-control" id="" name="message" rows="3" required></textarea>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Send Message</button>
+        </div>  
+      </form>  
+    </div>
+    <footer>
+      <div class="logopart"><h1 style="cursor: pointer;">Crowd Funding</h1></div>
+      <div class="socialmedia">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-instagram"></a>
+      </div>
+      <div class="policy" style="padding-bottom: 10px;">
+        <h6>DISCLAIMER: Crowdfunding Technologies Pvt Ltd is NOT a stock exchange recognised by the Securities Exchange Board of India (SEBI) under the Securities Contract (Regulation) Act, 1956. The securities offered by any company registered on crowdfunding.com (“Platform”) are not traded on any stock exchange recognised by SEBI. crowdfunding does not allow any secondary market trading of securities on the Platform.
+        </h6>
+      </div>
+    </footer>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,1055 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.alert{
+  width: 97%;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+body .content{
+  height: 100vh;
+  width: 100%;
+  background-image: url('{% static "images/background.png" %}');
+  /* background:  url(%("%s/background.png", @base)); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main{
+  height: 115vh;
+  width: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  height: 500px;
+  width: 55%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  background-image: url('{% static "images/background1.png" %}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+.container .content1{
+  height: 100%;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content2{
+  height: 100%;
+  width: 55%;
+  font-family: 'Rubik', sans-serif;
+}
+.container .content2 .box1{
+  height: 33%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content2 .box2{
+  height: 33%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .content2 .box2 h1{
+  width: 80%;
+}
+.container .content2 .box3{
+  height: 33%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+main .heading{
+  height: 50px;
+  width: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+main .step1{
+  height: 600px;
+  width: auto;
+  display: flex;
+  margin-top: 20px;
+  font-family: 'Overpass', sans-serif;
+}
+main .step1 .textdata{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .step1 .textdata .step{
+  width: 200px;
+}
+main .step1 .image{
+  height: 100%;
+  width: 50%;
+}
+main .step1 .image img{
+  height: 100%;
+  width: 100%;
+}
+main .step2{
+  height: 650px;
+  width: auto;
+  display: flex;
+  margin-top: 20px;
+  font-family: 'Overpass', sans-serif;
+  background-size: cover;
+}
+main .step2 .textdata{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .step2 .textdata .step{
+  width: 220px;
+}
+main .step2 .image{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .step2 .image img{
+  height: 70%;
+  width: 55%;
+}
+main .step3{
+  height: 600px;
+  width: auto;
+  display: flex;
+  margin-top: 20px;
+  font-family: 'Overpass', sans-serif;
+  /* background-image: url('{% static "images/image4.png" %}'); */
+}
+main .step3 .textdata{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .step3 .textdata .step{
+  width: 200px;
+}
+main .step3 .image{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: right;
+}
+main .step3 .image img{
+  height: 80%;
+  width: 80%;
+}
+main .step4{
+  height: 650px;
+  width: auto;
+  display: flex;
+  margin-top: 20px;
+  font-family: 'Overpass', sans-serif;
+  /* background-image: url('{% static "images/image5.png" %}'); */
+  background-size: cover;
+}
+main .step4 .textdata{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .step4 .textdata .step{
+  width: 220px;
+}
+main .step4 .image{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .step4 .image img{
+  height: 80%;
+  width: 85%;
+}
+figure{
+  height: 600px;
+  margin-top: 20px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+figure .heading{
+  height: 50px;
+  width: auto;
+  text-align: center;
+}
+figure .fields{
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+figure .fields .boxs{
+  height: 100%;
+  width: 45%;
+  display: flex;
+  column-gap: 30px;
+  row-gap: 30px;
+  grid-template-columns: auto auto;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+figure .fields .boxs .box{
+  height: 30%;
+  width: 45%;
+  cursor: pointer;
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #692ae7 , #3e0ca2);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition-duration: 1s;
+  border-radius: 10px;
+}
+figure .fields .boxs .box:hover{
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+figure .fields .boxs .box .field{
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure .fields .overview{
+  height: 100%;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure .fields .overview .display{
+  height: 60%;
+  width: 70%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+figure .fields .overview .display .contentdata{
+  height: 100%;
+  width: 100%;
+}
+figure .fields .overview .display .imagepart{
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+figure .fields .overview .display .imagepart img{
+  height: 100%;
+}
+figure .fields .overview .display .contentpart{
+  height: 70%;
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure .fields .overview .display .contentpart .maincontent{
+  width: 90%;
+  text-align: center;
+  padding-top: 20px;
+}
+.motivation{
+  height: 1000px;
+  background-image: url('{% static "images/background-3.png" %}');
+  background-size: 50% 100%;
+  display: flex;
+  margin-top: 100px;
+}
+.motivation .part1{
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+}
+.motivation .part1 .text{
+  height: 70%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivation .part1 .text h1{
+  font-size: 50px;
+}
+.motivation .part2{
+  height: 100%;
+  width: 60%;
+  display: flex;
+  font-family: 'Rubik', sans-serif;
+  font-size: 17px;
+  font-weight:100;
+}
+.motivation .part2 .contentpart1{
+  height: 100%;
+  width: 50%;
+}
+.motivation .part2 .contentpart1 .card1{
+  height: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivation .part2 .contentpart1 .card1 .cards{
+  height: 400px;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.motivation .part2 .contentpart1 .card1 .cards img{
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+}
+.motivation .part2 .contentpart1 .card1 .cards .imagecontent{
+  height: 20%;
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+.motivation .part2 .contentpart1 .card2{
+  height: 55%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivation .part2 .contentpart1 .card2 .cards{
+  height: 400px;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.motivation .part2 .contentpart1 .card2 .cards img{
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+}
+.motivation .part2 .contentpart1 .card2 .cards .imagecontent{
+  height: 20%;
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+.motivation .part2 .contentpart2{
+  height: 100%;
+  width: 50%;
+}
+.motivation .part2 .contentpart2 .card1{
+  height: 55%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivation .part2 .contentpart2 .card1 .cards{
+  height: 400px;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.motivation .part2 .contentpart2 .card1 .cards img{
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+}
+.motivation .part2 .contentpart2 .card1 .cards .imagecontent{
+  height: 10%;
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+.motivation .part2 .contentpart2 .card2{
+  height: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivation .part2 .contentpart2 .card2 .cards{
+  height: 400px;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.motivation .part2 .contentpart2 .card2 .cards img{
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+}
+.motivation .part2 .contentpart2 .card2 .cards .imagecontent{
+  height: 20%;
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+.userdesk{
+  height: 700px;
+  display: flex;
+  font-family: 'Varela Round', sans-serif;
+}
+.userdesk .investor{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userdesk .startup{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userdesk .investor .box{
+  height: 80%;
+  width: 70%;
+  background-color: #0f428d;
+  border-radius: 10px;
+}
+.userdesk .investor .box .imagepart{
+  height: 30%;
+  width: auto;
+}
+.userdesk .investor .box .maincontent{
+  height: 40%;
+  width: auto;
+  color: white;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.userdesk .investor .box .button{
+  height: 30%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userdesk .investor .box .button button{
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+}
+.userdesk .investor .box .imagepart img{
+  height: 70%;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.userdesk .startup .box{
+  height: 80%;
+  width: 70%;
+  background-color: #0f428d;
+  border-radius: 10px;
+}
+.userdesk .startup .box .imagepart{
+  height: 30%;
+  width: auto;
+}
+.userdesk .startup .box .imagepart img{
+  height: 70%;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.userdesk .startup .box .maincontent{
+  height: 40%;
+  width: auto;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+.userdesk .startup .box .button{
+  height: 30%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userdesk .startup .box .button button{
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+}
+footer{
+  height: 300px;
+  /* background-image: url('{% static "images/background-4.png" %}'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  margin: 20px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .logopart{
+  height: 60%;
+  width: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .socialmedia{
+  height: 60%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .socialmedia a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin: 20px;
+}
+footer .socialmedia a:hover{
+  color: blueviolet;
+}
+footer .policy{
+  height: auto;
+  width: 100%;
+  color: white;
+  padding: 20px;
+}
+
+@media screen and (max-width : 1200px) {
+  .container .content2 .box1 h4{
+    font-size: 20px;
+  }
+  .container .content2 .box2 h1{
+    font-size: 30px;
+  }
+  .container .content2 .box3 h4{
+    font-size: 20px;
+  }
+  main .step1{
+    height: 500px;
+  }
+  main .step2{
+    height: 500px;
+  }
+  main .step3{
+    height: 500px;
+  }
+  main .step4{
+    height: 500px;
+  }
+}
+@media screen and (max-width : 1100px) {
+  .container{
+    width: 65%;
+  }
+  figure .fields .boxs{
+    width: 50%;
+  }
+  figure .fields .overview{
+    width: 50%;
+  }
+  figure .fields .overview .display{
+    border: 1px solid black;
+    width: 90%;
+  }
+  .motivation{
+    height: 1500px;
+    background-size: 50% 100%;
+    flex-wrap: wrap;
+  }
+  .motivation .part1{
+    height: 20%;
+    width: 100%;
+  }
+  .motivation .part1 .text{
+    height: 70%;
+    width: 90%;
+  }
+  .motivation .part1 .text h1{
+    font-size: 50px;
+  }
+  .motivation .part2{
+    height: 80%;
+    width: 100%;
+    font-size: 17px;
+  }
+  .motivation .part2 .contentpart1{
+    height: 100%;
+    width: 50%;
+  }
+  .motivation .part2 .contentpart1 .card1{
+    height: 45%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart1 .card1 .cards{
+    height: 400px;
+    width: 330px;
+  }
+  .motivation .part2 .contentpart1 .card1 .cards img{
+    height: 80%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart1 .card1 .cards .imagecontent{
+    height: 20%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart1 .card2{
+    height: 55%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart1 .card2 .cards{
+    height: 400px;
+    width: 330px;
+  }
+  .motivation .part2 .contentpart1 .card2 .cards img{
+    height: 80%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart1 .card2 .cards .imagecontent{
+    height: 20%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart2{
+    height: 100%;
+    width: 50%;
+  }
+  .motivation .part2 .contentpart2 .card1{
+    height: 55%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart2 .card1 .cards{
+    height: 400px;
+    width: 330px;
+  }
+  .motivation .part2 .contentpart2 .card1 .cards img{
+    height: 80%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart2 .card1 .cards .imagecontent{
+    height: 10%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart2 .card2{
+    height: 45%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart2 .card2 .cards{
+    height: 400px;
+    width: 330px;
+  }
+  .motivation .part2 .contentpart2 .card2 .cards img{
+    height: 80%;
+    width: 100%;
+  }
+  .motivation .part2 .contentpart2 .card2 .cards .imagecontent{
+    height: 20%;
+    width: 100%;
+  }
+  .userdesk .startup .box{
+    width: 90%;
+  }
+  .userdesk .investor .box{
+    width: 90%;
+  }
+}
+@media screen and (max-width : 1005px) {
+  body .content{
+    background-image: url('{% static "images/background-5.png" %}');
+    background-size: contain;
+  }
+  .container{
+    height: 450px;
+    width: 75%;
+  }
+  .container .content1 img{
+    height: 400px;
+  }
+  main .step1{
+    height: 400px;
+  }
+  main .step2{
+    height: 400px;
+  }
+  main .step3{
+    height: 400px;
+  }
+  main .step4{
+    height: 400px;
+  }
+  figure{
+    height: 1100px;
+  }
+  figure .fields{
+    height: 50%;
+  }
+  figure .fields .boxs{
+    width: 100%;
+    column-gap: 50px;
+  }
+  figure .fields .overview{
+    width: 100%;
+  }
+}
+@media screen and (max-width : 800px) {
+  .container{
+    height: 400px;
+    width: 90%;
+  }
+  .container .content1 img{
+    height: 350px;
+  }
+  main .step1{
+    height: 300px;
+  }
+  main .step2{
+    height: 300px;
+  }
+  main .step3{
+    height: 300px;
+  }
+  main .step4{
+    height: 300px;
+  }
+}
+@media screen and (max-width : 700px) {
+  .motivation{
+    height: auto;
+  }
+  .motivation .part2{
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+  .motivation .part2 .contentpart1{
+    width: 100%;
+  }
+  .motivation .part2 .contentpart2{
+    width: 100%;
+  }
+  .motivation .part2 .contentpart1 .card1{
+    margin-bottom: 20px;
+  }
+  .motivation .part2 .contentpart1 .card2{
+    margin-bottom: 20px;
+  }
+  .motivation .part2 .contentpart2 .card1{
+    margin-bottom: 20px;
+  }
+  .motivation .part2 .contentpart2 .card2{
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width : 600px) {
+  .container{
+    width: 95%;
+  }
+  figure{
+    height: 1100px;
+  }
+  figure .fields{
+    height: 50%;
+  }
+  figure .fields .boxs{
+    width: 100%;
+    column-gap: 10px;
+    padding: 20px;
+  }
+  figure .fields .boxs .box{
+    height: 30%;
+    width: 48%;
+  }
+  figure .fields .boxs .box .field h5{
+    font-size: 18px;
+  }
+  figure .fields .overview{
+    width: 100%;
+  }
+  .userdesk{
+  height: 1400px;
+  flex-wrap: wrap;
+}
+.userdesk .investor{
+  height: 50%;
+  width: 100%;
+}
+.userdesk .startup{
+  height: 50%;
+  width: 100%;
+}
+footer .logopart{
+  height: 20%;
+  width: 100%;
+}
+footer .socialmedia{
+  height: 10%;
+  width: 100%;
+}
+}
+@media screen and (max-width : 550px) {
+  .main{
+    height: 90vh;
+  }
+  .container{
+    height: 400px;
+    width: 95%;
+  }
+  .container .content1 img{
+    height: 300px;
+  }
+  .container .content2 .box1 h4{
+    font-size: 15px;
+  }
+  .container .content2 .box2 h1{
+    font-size: 25px;
+  }
+  .container .content2 .box3 h4{
+    font-size: 15px;
+  }
+  main .step1{
+    height: 300px;
+  }
+  main .step1 .textdata{
+    width: 40%;
+  }
+  main .step1 .image{
+    width: 60%;
+  }
+  main .step1 .textdata .step{
+    padding: 10px;
+    width: 100%;
+  }
+  main .step2{
+    height: 300px;
+  }
+  main .step2 .textdata{
+    width: 40%;
+  }
+  main .step2 .image{
+    width: 60%;
+  }
+  main .step2 .textdata .step{
+    padding: 10px;
+    width: 100%;
+  }
+  main .step3{
+    height: 300px;
+  }
+  main .step3 .textdata{
+    width: 40%;
+  }
+  main .step3 .image{
+    width: 60%;
+  }
+  main .step3 .textdata .step{
+    padding: 10px;
+    width: 100%;
+  }
+  main .step4{
+    height: 300px;
+  }
+  main .step4 .textdata{
+    width: 40%;
+  }
+  main .step4 .image{
+    width: 60%;
+  }
+  main .step4 .textdata .step{
+    padding: 10px;
+    width: 100%;
+  }
+}
+@media screen and (max-width : 500px) {
+  .container{
+    height: 500px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    background: linear-gradient(to top,white 50%,#5271ff 50%,#5271ff 100%);
+  }
+  .container .content1{
+    height: 50%;
+    width: 100%;
+  }
+  .container .content2{
+    height: 50%;
+    width: 100%;
+  }
+  .container .content2 .box1{
+    text-align: center;
+  }
+  .container .content2 .box2{
+    text-align: center;
+  }
+  .container .content2 .box3{
+    text-align: center;
+  }
+  figure .fields .overview .display{
+    height: 80%;
+  }
+  footer{
+    height: 350px;
+  }
+}
+@media screen and (max-width : 450px) {
+  main .step1{
+    height: 250px;
+  }
+  main .step2{
+    height: 250px;
+  }
+  main .step3{
+    height: 250px;
+  }
+  main .step4{
+    height: 250px;
+  }
+}
+@media screen and (max-width : 400px) {
+  figure .fields .overview .display{
+    height: 90%;
+  }
+  footer{
+    height: 400px;
+  }
+  figure .fields .overview .display .imagepart img{
+    height: 70%;
+  }
+}
+@media screen and (max-width : 350px) {
+  main .step1{
+    height: 500px;
+    flex-wrap: wrap;
+  }
+  main .step1 .textdata{
+    height: 30%;
+    width: 100%;
+    border-top: 1px solid green;
+  }
+  main .step1 .image{
+    height: 70%;
+    width: 100%;
+    border-bottom: 1px solid green;
+  }
+  main .step1 .textdata .step{
+    width: 100%;
+  }
+  main .step2{
+    height: 500px;
+    flex-wrap: wrap;
+  }
+  main .step2 .textdata{
+    height: 30%;
+    width: 100%;
+    border-bottom: 1px solid green;
+  }
+  main .step2 .image{
+    height: 70%;
+    width: 100%;
+  }
+  main .step2 .textdata .step{
+    width: 100%;
+  }
+  main .step3{
+    height: 500px;
+    flex-wrap: wrap;
+  }
+  main .step3 .textdata{
+    height: 30%;
+    width: 100%;
+  }
+  main .step3 .image{
+    height: 70%;
+    width: 100%;
+    border-bottom: 1px solid green;
+  }
+  main .step3 .textdata .step{
+    width: 100%;
+  }
+  main .step4{
+    height: 500px;
+    flex-wrap: wrap;
+  }
+  main .step4 .textdata{
+    height: 30%;
+    width: 100%;
+    border-bottom: 1px solid green;
+  }
+  main .step4 .image{
+    height: 70%;
+    width: 100%;
+  }
+  main .step4 .textdata .step{
+    width: 100%;
+  }
+  figure .fields .overview .display{
+    font-size: 15px;
+  }
+  footer{
+    height: 470px;
+  }
+}
+@media screen and (max-width : 600px),
+      screen and (max-height: 700px) {
+  .container{
+    margin-top: 100px;
+  }
+}

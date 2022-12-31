@@ -1,0 +1,175 @@
+{% extends "Homepage/basic.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %} Blog {% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <style>
+      .container .header{
+        border: none;
+        padding: 0%;
+        cursor:all-scroll;
+      }
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    {% if messages %}
+    <ul class="messages" id="message" style="z-index: 3;">
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+          {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Start POST</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="/blogs/" method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div class="modal-body">
+              <div class="mb-3">
+                <label for="" class="form-label">Enter Description</label>
+                <textarea class="form-control" id="" name="description" required rows="3"></textarea>
+              </div>
+              {{form}}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">POST</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div id="header_part" class="header">
+          <a href="/blogs/"><button type="button" class="btn btn-primary">All</button></a>
+          <a href="/blogs/investor/"><button type="button" class="btn btn-primary">Investor</button></a>
+          <a href="/blogs/borrower/"><button type="button" class="btn btn-primary">Borrower</button></a>
+          <a href="/blogs/accouting/"><button type="button" class="btn btn-primary">Accounting</button></a>
+          <a href="/blogs/it/"><button type="button" class="btn btn-primary">IT</button></a>
+          <a href="/blogs/economic/"><button type="button" class="btn btn-primary">Economic</button></a>
+          <a href="/blogs/finance/"><button type="button" class="btn btn-primary">Finance</button></a>
+          <a href="/blogs/marketting/"><button type="button" class="btn btn-primary">Marketting</button></a>
+          <a href="/blogs/management/"><button type="button" class="btn btn-primary">Management</button></a>
+          <a href="/blogs/ib/"><button type="button" class="btn btn-primary">IB</button></a>
+
+        </div>
+
+        <div class="content">
+          <div class="profile">
+            <a href=""><i style='font-size:30px' class='fas'>&#xf406;</i></a>
+          </div>
+          <input type="text" name="" style="padding-left: 10px;" placeholder="Start a post" id="" data-bs-toggle="modal" data-bs-target="#exampleModal" disabled>
+        </div>
+        {% for i in blog_data %}
+        <div class="contain">
+          <div class="profile-data">
+            <div class="profile-img">
+              <i style='font-size:30px' class='fas'>&#xf406;</i>
+            </div>
+            <div class="name"><b>{{i.first_name}}</b> 
+              ({{i.blog_category}})
+            </div>
+          </div>
+          <div class="content-data">
+            <div class="main-content">
+              <p>{{i.blog_desc}}</p>
+            </div>
+            <div class="content-img">
+              <img src="/media/{{i.blog_img}}" alt="">
+            </div>
+          </div>
+          <!-- <span>{{i.id}}</span> -->
+          <div class="content-social">
+            <div class="like-btn">
+              <i onclick="toggleButton(this)" class="fa fa-thumbs-up"></i>
+            </div>
+            <div class="comment-btn">
+              <i style='font-size:24px' id="{{i.id}}" onclick="reply_click()" class='fas'>&#xf27a;</i>
+            </div>
+            <div class="share-btn">
+              <i style="font-size:24px" class="fa">&#xf1e0;</i>
+            </div>
+          </div>
+          <div class="comment_part" id="comment{{i.id}}">
+            <div class="add_comment">
+              <i style='font-size:25px; margin-right: 10px;' class='fas'>&#xf406;</i>
+              <form action="/comment/" method="post">{% csrf_token %}
+                <input type="text" name="post_id" id="" value="{{i.id}}" hidden>
+                <input type="text" name="comment_data" style="padding-left: 10px;" placeholder="Add comment" id="" required>
+                <button type="submit"  class="btn btn-primary">Add</button>
+              </form>
+            </div>
+            <div class="comments">
+              {% for j in comment_data %}
+              {% if j.blog_id == i.id %}
+              <div class="user_desk">
+                <i style='font-size:25px; margin-right: 10px; margin-left: 10px;' class='fas'>&#xf406;</i>
+                <b>{{j.first_name}}</b>
+              </div>
+              <div class="comment-content">
+                {{j.comment}}
+              </div><hr>
+              {% endif %}
+              {% endfor %} 
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+      <div class="container">
+        <div class="picture" style="margin-top: 200px; text-align: center;">
+          <h1>Page not found</h1>
+          <h5>Please first go to login </h5>
+          <div class="buttonarea">
+            <a href="/login/"><button type="button" name="id" class="btn btn-primary">Login</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+  {% block script %}
+  <script>
+    let id;
+    function reply_click()
+    {
+      id = event.srcElement.id;
+      var x = document.getElementById("comment" + id);
+      if (x.style.display == "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function toggleButton(x) {
+      x.classList.toggle("fa-thumbs-down");
+    }
+    var ele = ["Ak","jk","dk"];
+    var index = ele.indexOf("jk");
+    if (index !== -1) {
+      ele.splice(index, 1);
+    }
+    setTimeout(() => {
+      document.getElementById("message").style.display = "none";
+    }, 2000);
+  </script>
+  {% endblock %}
+</html>

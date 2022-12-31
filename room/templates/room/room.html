@@ -1,0 +1,200 @@
+{% extends "Homepage/basic.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% block title %} {{room.name}} {% endblock %}
+    {% block style %}
+    {% load static %}
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        body{
+            background-color: #f3f2ef;
+        }
+        .container{
+          height: 85vh;
+          margin-top: 100px;
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          font-family: 'Rubik', sans-serif;
+        }
+        .container .heading{
+          text-align: center;
+          width: 100%;
+          color: blueviolet;
+          margin-top: 10px;
+        }
+        .container main{
+            height: 90%;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .container main .content{
+            height: 85%;
+            width: 100%;
+            padding: 20px;
+            border-radius: 20px;
+            overflow: scroll;
+            background-color: white;
+        }
+        .container main .content::-webkit-scrollbar {
+          display: none;
+        }
+        .container main .content {
+          -ms-overflow-style: none; 
+          scrollbar-width: none;
+        }
+        .container main .content .messages{
+            height: auto;
+            background-color: cadetblue;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .container main .content .messages .username{
+            height: 40px;
+            font-weight: 600;
+            padding: 10px;
+        }
+        .container main .content .messages .message{
+            padding: 10px;
+        }
+        .container main .send-content{
+            height: 10%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container main .send-content .message-form{
+            height: auto;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        .container main .send-content .message-form form{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .container main .send-content .message-form form input{
+            width: 90%;
+            border: 2px solid black;
+        }
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+        {% if messages %}
+        <ul class="messages" id="message" style="z-index: 3;">
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+              {{message}}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <div class="container">
+      <div class="heading">
+        <h1>{{room.name}}</h1>
+      </div>
+      <main>
+        <div class="content">
+            <div class="messages">
+                <div class="username">Akshay</div>
+                <div class="message">
+                    Hello
+                </div>
+            </div>
+            <div class="messages">
+                <div class="username">Akshay</div>
+                <div class="message">
+                    Hello
+                </div>
+            </div>
+            <div class="messages">
+                <div class="username">Akshay</div>
+                <div class="message">
+                    Hello
+                </div>
+            </div>
+            <div class="messages">
+                <div class="username">Akshay</div>
+                <div class="message">
+                    Hello
+                </div>
+            </div>
+            <div class="messages">
+                <div class="username">Akshay</div>
+                <div class="message">
+                    Hello
+                </div>
+            </div>
+            <div class="messages">
+                <div class="username">Akshay</div>
+                <div class="message">
+                    Hello
+                </div>
+            </div>
+            <div class="messages">
+                <div class="username">Akshay</div>
+                <div class="message">
+                    Hello
+                </div>
+            </div>
+        </div>
+        <div class="send-content">
+            <div class="message-form">
+                <form action="">
+                    <input type="text" class="form-control" id="lname" name="lname" required>
+                    <button type="submit"  class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+      </main>
+    </div>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  </body>
+  {% block script %}
+  <script src="{% static 'room/js/main.js' %}"></script>
+  <!-- {{ room.slug|json_script:"json-roomname" }} -->
+    <script>
+        // const roomName = JSON.parse(document.getElementById('json-roomname').textContent);
+        // const chatSocket = new WebSocket(
+        //     'ws://'
+        //     + window.location.host
+        //     + '/ws/rooms/'
+        //     + roomName
+        //     + '/'
+        // );
+        // const chatSocket = new WebSocket('ws://localhost:8080/rooms/' + roomName + '/')
+
+        // chatSocket.onmessage = function(e){
+        //     console.log("onmessage")
+        // }
+
+        // chatSocket.onclose = function(e){
+        //     console.log("onclose")
+        // }
+    </script>
+  {% endblock %}
+</html>

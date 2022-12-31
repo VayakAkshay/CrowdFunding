@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  background-color: #eeeffc;
+}
+.container{
+    width: 70%;
+    margin-top: 150px;
+}
+.container .profile{
+    display: flex;
+}
+.container .profile .profile_picture{
+    height: auto;
+    width: 100px;
+}
+.container .profile .profile_picture img{
+    height: 110px;
+    width: 110px;
+    cursor: pointer;
+}
+.container .profile .profile_disc{
+    height: auto;
+    width: 60%;
+    padding-left: 30px;
+}
+.container .profile .edit_profile{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .profile_complete{
+    margin-top: 50px;
+    height: auto;
+}
+.container .profile_type{
+    height: auto;
+    margin-top: 30px;
+}
+.container .profile_type .types{
+    height: auto;
+    width: auto;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container .about{
+    height: auto;
+    margin-top: 20px;
+}
+.container .about_content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.container .about .about_you{
+    height: 100%;
+    width: 100%;
+}
+.container .about .edit_btn{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .plan{
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+}
+.container .plan .my_plan{
+    height: 100%;
+    width: 100%;
+}
+.container .plan .edit_btn{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .category{
+    height: auto;
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 10px;
+}
+.container .activity{
+    height: auto;
+    margin-top: 30px;
+    padding: 10px;
+}
+.activity .content{
+    height: auto;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.activity .content .profile-data{
+  height: 50px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.activity .content .profile-data .profile-img{
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.activity .content .profile-data .name{
+  height: 40px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.activity .content .content-data{
+  height: auto;
+}
+.activity .content .content-data .main-content{
+  height: auto;
+  overflow: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  margin-left: 10px;
+}
+
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+.activity .content .content-data .content-img{
+  height: 100%;
+  width: 100%;
+}
+.activity .content .content-data .content-img img{
+  height: 100%;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.container .logout{
+    height: 50px;
+    margin-top: 50px;
+}
+.container .logout button{
+    width: 100%;
+    background-color: black;
+    border: none;
+}
+@media screen and (max-width: 900px){
+    .container{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 900px){
+    .container{
+        width: 90%;
+    }
+    .activity .content{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 800px){
+    .container{
+        width: 100%;
+    }
+    .activity .content{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 500px){
+    .container{
+        width: 100%;
+    }
+    .activity .content{
+        width: 80%;
+    }
+    .container .profile{
+        flex-wrap: wrap;
+    }
+    .container .profile .profile_disc{
+        width: auto;
+    }
+    .container .profile .edit_profile{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 450px){
+    .container .profile_type .types button{
+        margin-top: 15px;
+    }
+}
+@media screen and (max-width: 400px){
+    .activity .content{
+        width: 100%;
+    }
+    .container .profile{
+        flex-wrap: wrap;
+    }
+    .container .profile .profile_picture{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .profile .profile_disc{
+        width: 100%;
+        text-align: center;
+    }
+    .container .profile .edit_profile{
+        margin-top: 10px;
+    }
+}
