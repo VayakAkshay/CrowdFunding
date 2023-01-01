@@ -87,14 +87,21 @@ WSGI_APPLICATION = 'Crowdfunding.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': config("DB_NAME"),
+#         'HOST': config("DB_HOST"),
+#         'PORT': config("DB_PORT"),
+#         'USER': config("DB_USER"),
+#         'PASSWORD': config("DB_PASSWORD"),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config("DB_NAME"),
-        'HOST': config("DB_HOST"),
-        'PORT': config("DB_PORT"),
-        'USER': config("DB_USER"),
-        'PASSWORD': config("DB_PASSWORD"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
