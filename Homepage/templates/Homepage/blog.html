@@ -5,17 +5,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% block title %} Blog {% endblock %}
+    {% block title %} Blogs- Crowdfunding{% endblock %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     {% block style %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <style>
       .container .header{
         border: none;
         padding: 0%;
         cursor:all-scroll;
       }
+      .container .contain .profile-data a{
+        text-decoration: none;
+      }
+      .container .contain .profile-data a .name{
+        color: black;
+      }
     </style>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     {% endblock %}
   </head>
   <body>
@@ -81,9 +87,14 @@
             <div class="profile-img">
               <i style='font-size:30px' class='fas'>&#xf406;</i>
             </div>
-            <div class="name"><b>{{i.first_name}}</b> 
-              ({{i.blog_category}})
-            </div>
+            <form action="/profiles/" method="post">{% csrf_token %}
+              <input type="text" name="email_id" value="{{i.email_id}}" id="" hidden>
+              <button type="submit" style="border: none; background-color: transparent;">
+                <div class="name"><b>{{i.first_name}}</b> 
+                  ({{i.blog_category}})
+                </div>
+              </button>
+            </form>
           </div>
           <div class="content-data">
             <div class="main-content">
@@ -153,10 +164,10 @@
     {
       id = event.srcElement.id;
       var x = document.getElementById("comment" + id);
-      if (x.style.display == "none") {
-        x.style.display = "block";
-      } else {
+      if (x.style.display == "block") {
         x.style.display = "none";
+      } else {
+        x.style.display = "block";
       }
     }
     function toggleButton(x) {
@@ -167,9 +178,11 @@
     if (index !== -1) {
       ele.splice(index, 1);
     }
-    setTimeout(() => {
-      document.getElementById("message").style.display = "none";
-    }, 2000);
+    if(document.getElementById("message")!=null){
+      setTimeout(() => {
+        document.getElementById("message").style.display = "none";
+      }, 2000);
+    }
   </script>
   {% endblock %}
 </html>

@@ -1,0 +1,111 @@
+{% extends "Homepage/basic.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %} Profile {% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'css/profiles.css' %}">
+    <style>
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    {% if messages %}
+    <ul class="messages" id="message" style="z-index: 3;">
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+          {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="container">
+        {% for i in profile_data %}
+        <div class="profile">
+            <div class="profile_picture">
+                <img src="{% static 'images/userplus.png' %}" alt="" >
+            </div>
+            <div class="profile_disc">
+                <h4>{{i.full_name}}</h4>
+                <h6>{{i.email}}</h6>
+                <h6>{{i.mobile_no}}</h6>
+            </div>
+        </div>
+        <div class="profile_type">
+            <div class="types">
+            <h4><li id="account_type">{{i.account_type}}</li></h4>
+            </div>
+        </div>
+        <div class="about">
+            <div class="description" id="desc">
+                <div class="about_content">
+                    <h4>About Me</h4>
+                </div>
+                <li style="list-style: none;" id="description">{{i.description}}</h6>
+            </div>
+        </div>
+
+        <div class="plan">
+            {% if i.account_type == "Borrower" %}
+            <div class="my_plan">
+                <div class="description" id="plan_desc">
+                <div class="about_content">
+                    <h4>My Plan introduction for Business</h4>
+                </div>
+                <li id="business_plan" style="list-style: none; ">{{i.business_plan}}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="category">
+            <h3>Business Categories</h3><br>
+            {% for j in fields_list %}
+            <li style="margin-left: 20px;" id="business_field">{{j}}</li>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <div class="activity">
+            <h3 style="margin-bottom: 20px;">My posts</h3>
+            {% if blog_data %}
+            {% for i in blog_data %}
+            <div class="content">
+                <div class="profile-data">
+                    <div class="profile-img">
+                      <i style='font-size:30px' class='fas'>&#xf406;</i>
+                    </div>
+                    <div class="name"><b>You</b>
+                      ({{i.blog_category}})
+                    </div>
+                  </div>
+                  <div class="content-data">
+                    <div class="main-content">
+                      <p>{{i.blog_desc}}</p>
+                    </div>
+                    <div class="content-img">
+                      <img src="/media/{{i.blog_img}}" alt="">
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h6> - No any post yet</h6>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+  {% block script %}
+  <script>
+  </script>
+  {% endblock %}
+</html>

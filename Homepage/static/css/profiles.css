@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; 
   scrollbar-width: none;
-  /* background-color: #eeeffc; */
+  background-color: #eeeffc;
   /* background-color: white; */
 }
 .container{
@@ -31,17 +31,6 @@ body {
     height: auto;
     width: 60%;
     padding-left: 30px;
-}
-.container .profile .edit_profile{
-    height: auto;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container .profile_complete{
-    margin-top: 50px;
-    height: auto;
 }
 .container .profile_type{
     height: auto;
@@ -69,26 +58,13 @@ body {
     height: 100%;
     width: 100%;
 }
-.container .about .edit_btn{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .container .plan{
     height: auto;
     margin-top: 20px;
-    display: flex;
 }
 .container .plan .my_plan{
     height: 100%;
     width: 100%;
-}
-.container .plan .edit_btn{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .container .category{
     height: auto;

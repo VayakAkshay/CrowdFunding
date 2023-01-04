@@ -91,12 +91,16 @@ body {
   align-items: center;
   cursor: pointer;
 }
-.container .contain .profile-data .name{
+.container .contain .profile-data a .name{
   height: 40px;
   margin-left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
+}
+.container .contain .profile-data a{
+  list-style: none;
 }
 .container .contain .content-data{
   height: auto;

@@ -64,6 +64,7 @@ def Contactpage(request):
         return render(request,'Homepage/contact.html')
 
 def Profilepage(request):
+    more_btn = 1
     user = request.user
     profile_data_cat = Profile_data.objects.filter(email = user).first()
     fields_list = str(profile_data_cat).split(",")
@@ -73,7 +74,8 @@ def Profilepage(request):
     user_mobile = User.objects.get(username = user).email
     profile_data = Profile_data.objects.filter(email = user).values()
     blog_data = Blog_data.objects.filter(email_id = user).values()
-    return render(request,"Homepage/profile.html",{"username":user_name,"last_name":last_name,"email":user,"mobile_number":user_mobile,"profile_data":profile_data,"fields_list":fields_list,"blog_data":blog_data})
+    limited_blog_data = Blog_data.objects.filter(email_id = user).all()[:3]
+    return render(request,"Homepage/profile.html",{"username":user_name,"last_name":last_name,"email":user,"mobile_number":user_mobile,"profile_data":profile_data,"fields_list":fields_list,"blog_data":blog_data,"limited_blog_data":limited_blog_data,"more_btn":more_btn})
     
 def logout_page(request):
     logout(request)
@@ -112,7 +114,6 @@ def check_business_field(request):
         return redirect("/profile/")
     
     return render(request,"Homepage/profile.html")
-
 
 def edit_profile(request):
     if request.method == "POST":
@@ -172,7 +173,12 @@ def Blog_page(request):
             messages.warning(request,"Please first complete your profile then start the blog")
             return render(request,"Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
     except:
-        return render(request, "Homepage/blog.html")
+        form = ImageForm()
+        user = request.user
+        user_name = User.objects.get(username = user).first_name
+        comment_data = Comment_data.objects.all().values()
+        blog_data = Blog_data.objects.all().values()
+        return render(request, "Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
 def comment_handler(request):
     if request.method == "POST":
         user = request.user
@@ -381,3 +387,41 @@ def IB(request):
     user_name = User.objects.get(username = user).first_name
     blogs = Blog_data.objects.filter(id__in = id_set).values()
     return render(request,"Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blogs,"comment_data":comment_data})
+
+def all_profile(request):
+    user = request.user
+    user_name = User.objects.get(username = user).first_name
+    try:
+        if request.method == "POST":
+            email_id = request.POST.get("email_id")
+            profile_data = Profile_data.objects.filter(email = email_id).all()
+            blog_data = Blog_data.objects.filter(email_id = email_id).all()
+            profile_data_cat = Profile_data.objects.filter(email = email_id).first()
+            fields_list = str(profile_data_cat).split(",")
+            fields_list.pop(0)
+            print("Done")
+            return render(request,"Homepage/profiles.html",{"username":user_name,"profile_data":profile_data,"blog_data":blog_data,"fields_list":fields_list})
+    except:
+        messages.warning(request,"Something went wrong")
+        return redirect("/blogs/")
+
+def all_blogs(request):
+    try:
+        more_btn = 1
+        if request.method == "POST":
+            more_btn = 0
+            email = request.POST.get("email")
+            limited_blog_data = Blog_data.objects.filter(email_id = email).all()
+            user = request.user
+            profile_data_cat = Profile_data.objects.filter(email = user).first()
+            fields_list = str(profile_data_cat).split(",")
+            fields_list.pop(0)
+            user_name = User.objects.get(username = user).first_name
+            last_name = User.objects.get(username = user).last_name
+            user_mobile = User.objects.get(username = user).email
+            profile_data = Profile_data.objects.filter(email = user).values()
+            blog_data = Blog_data.objects.filter(email_id = user).values()
+            limited_blog_data = Blog_data.objects.filter(email_id = user).all()
+            return render(request,"Homepage/profile.html",{"username":user_name,"last_name":last_name,"email":user,"mobile_number":user_mobile,"profile_data":profile_data,"fields_list":fields_list,"blog_data":blog_data,"limited_blog_data":limited_blog_data,"more_btn":more_btn})
+    except:
+        return redirect("/profile/")

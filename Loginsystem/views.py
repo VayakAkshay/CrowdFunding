@@ -40,7 +40,7 @@ def RegesterPage(request):
     
             email_sender = 'crowdfunding.help.0@gmail.com'
     
-            email_password = 'xgumolupirllkluu'
+            email_password = 'uuzogbertihizukb'
             email_receiver = email
     
             subject = "OTP"
@@ -89,7 +89,7 @@ def forgot_otp(request):
             OTP_data = OTP_Data(email_id = email,otp = otp_generate)
             OTP_data.save()
             email_sender = 'crowdfunding.help.0@gmail.com'
-            email_password = 'xgumolupirllkluu'
+            email_password = 'uuzogbertihizukb'
             email_receiver = email
             subject = "OTP"
             body = """

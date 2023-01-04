@@ -6,6 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <meta property="og:site_name" content="Crowdfunding" />
+    <meta property="og:title" content="Get funding for startup and invest in startup" />
+    <meta property="og:description" content="Interested in investing in and acquiring funds for new and existing businesses"/>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content="Get funding for startup and invest in startup" />
+    <meta name="twitter:description" content="Interested in investing in and acquiring funds for new and existing businesses" />
+    <meta name="twitter:image" content="{% static '/images/image3.png' %}" />
+    <meta name="twitter:url" content="" />
+    <meta property="og:title" content="Get funding for startup and invest in startup">
+    <meta property="og:site_name" content="Crowdfunding">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="Interested in investing in and acquiring funds for new and existing businesses">
+    <meta property="og:type" content=website>
+    <meta property="og:image" content="{% static '/images/image3.png' %}">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Crowdfundings","description":"Would you like to invest in and acquire funds for new and existing businesses that you are interested in?"}</script>
     <title>Home - Crowd Funding</title>
     <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +31,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {% block title %} Home - Crowdfunding {% endblock %}
     {% block style %}
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
       body .content{
@@ -28,6 +43,11 @@
       .container{
         background: linear-gradient(to top,white 50%,#5271ff 50%,#5271ff 100%);
       }
+      }
+      @media screen and (max-width: 600px) {
+        .motivation .part1 .text h1{
+          font-size: 40px;
+        }
       }
     </style>
     
@@ -53,13 +73,13 @@
           </div>
           <div class="content2">
             <div class="box1">
-              <h4>No debt  •  No dilution  •  No strings</h4>
+              <h4>Paperless  •  Time saver  •  No strings</h4>
             </div>
             <div class="box2">
-              <h1>Get tomorrow's revenue, today</h1>
+              <h1>Build your business with us</h1>
             </div>
             <div class="box3">
-              <h4 style="text-align: center;">Grow your revenue with all-in-one prospecting solutions powered by the leader in private-company data.</h4>
+              <h4 style="text-align: center;">Simple way to get funds from investors and invest in businesses.</h4>
             </div>
           </div>
         </div>
@@ -67,7 +87,7 @@
     </div>
     <main>
       <div class="heading">
-        <h1>How it Works</h1>
+        <h1>How it works</h1>
       </div>
 
       <div class="step1">
@@ -256,7 +276,7 @@
 
     <div class="motivation">
       <div class="part1">
-        <div class="text"><h1>Backed by luminaries and visionaries building iconic companies and institutions.        </h1></div>
+        <div class="text"><h1>"The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is guaranteed to fail is not taking risks."</h1></div>
       </div>
       <div class="part2">
        <div class="contentpart1">
@@ -309,13 +329,13 @@
           </div>
           <div class="maincontent">
             <h1>Are you an investor ?</h1><br><br>
-            <h5>Discover and Invest in curated startups. Get access to exclusive allocations and build your investment portfolio.
+            <h5>We are thrilled to have you on board as an investor and believe that your support and guidance will be invaluable as we work towards our goals.
             </h5>
           </div>
           <div class="button">
             <button>Join to invest</button>
           </div>
-        </div>cx
+        </div>
       </div>
       <div class="startup">
         <div class="box">
@@ -323,8 +343,8 @@
             <img src="{% static 'images/startup.png' %}" alt="">
           </div>
           <div class="maincontent">
-            <h1>Are you a startup?</h1><br><br>
-            <h5>Fundraise in STEALTH with your curated list of investors & access value-added capital. Bring all investors as a single entity in your cap table.
+            <h1>Are you a Borrower?</h1><br><br>
+            <h5>We are thrilled to have you join us as a borrower and believe that your creativity, enthusiasm, and hard work will help us to achieve great things.
             </h5>
           </div>
           <div class="button">

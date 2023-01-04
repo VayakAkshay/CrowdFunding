@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     {% block style %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <style>
+        body {
+            background-color: white;            
+        }
+    </style>
     {% endblock %}
   </head>
   <body>
@@ -160,6 +165,36 @@
         <div class="activity">
             <h3 style="margin-bottom: 20px;">My posts</h3>
             {% if blog_data %}
+            {% if blog_data|length > 3 %}
+            {% for i in limited_blog_data %}
+            <div class="content">
+                <div class="profile-data">
+                    <div class="profile-img">
+                      <i style='font-size:30px' class='fas'>&#xf406;</i>
+                    </div>
+                    <div class="name"><b>You</b>
+                      ({{i.blog_category}})
+                    </div>
+                  </div>
+                  <div class="content-data">
+                    <div class="main-content">
+                      <p>{{i.blog_desc}}</p>
+                    </div>
+                    <div class="content-img">
+                      <img src="/media/{{i.blog_img}}" alt="">
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+            {% if more_btn == 1 %}
+            <div class="more_btn" style="height: 80px; width: 100%; display: flex; justify-content: center; align-items: center;">
+                <form action="/all_blogs/" method="post">{% csrf_token %}
+                    <input type="text" name="email_id" value="{{i.email_id}}" id="" hidden>
+                    <button type="submit" id="load_more" class="btn btn-primary">Load more</button>
+                </form>
+            </div>
+            {% endif %}
+            {% else %}
             {% for i in blog_data %}
             <div class="content">
                 <div class="profile-data">
@@ -180,6 +215,7 @@
                   </div>
             </div>
             {% endfor %}
+            {% endif %}
             {% else %}
             <h6> - No any post yet</h6>
             {% endif %}

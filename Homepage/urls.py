@@ -33,6 +33,8 @@ urlpatterns = [
     path("blogs/management/",views.Management,name="Management"),
     path("blogs/it/",views.IT,name="IT"),
     path("blogs/ib/",views.IB,name="IB"),
+    path("profiles/",views.all_profile,name = "all_profile"),
+    path("all_blogs/",views.all_blogs,name="all_blogs"),
     re_path(r'^media/(?P<path>.*)$',serve, {'document_root': settings.MEDIA_ROOT}),
 ] 
 
