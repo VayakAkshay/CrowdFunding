@@ -20,7 +20,6 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('login/',views.LoginPage,name="LoginPage"),
     path('regester/',views.RegesterPage,name="RegesterPage"),
     path('password/',views.PasswordPage,name="PasswordPage"),

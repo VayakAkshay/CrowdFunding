@@ -147,38 +147,41 @@ def edit_plan(request):
     return redirect("/profile/")
 
 def Blog_page(request):
-    try:
-        form = ImageForm()
-        user = request.user
-        comment_data = Comment_data.objects.all().values()
-        blog_data = Blog_data.objects.all().values()
-        profile_data = list(Profile_data.objects.filter(email = user).values())[0]["account_type"]
-        business_category = list(Profile_data.objects.filter(email = user).values())[0]["business_category"]
-        if profile_data != "" and business_category != "":
-            blog = Blog_data()
-            blog.blog_desc = request.POST.get("description")
-            user_name = User.objects.get(username = user).first_name
-            if request.method == "POST":
-                blog.first_name = user_name
-                blog.email_id = user
-                blog.blog_category = profile_data
-                blog.business_category = business_category
-                if len(request.FILES) != 0:
-                    blog.blog_img = request.FILES['blog_img']
-                blog.save()
+    if request.user.is_authenticated:
+        try:
             form = ImageForm()
-            return render(request,"Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
-        else:
+            user = request.user
+            comment_data = Comment_data.objects.all().values()
+            blog_data = Blog_data.objects.all().values()
+            profile_data = list(Profile_data.objects.filter(email = user).values())[0]["account_type"]
+            business_category = list(Profile_data.objects.filter(email = user).values())[0]["business_category"]
+            if profile_data != "" and business_category != "":
+                blog = Blog_data()
+                blog.blog_desc = request.POST.get("description")
+                user_name = User.objects.get(username = user).first_name
+                if request.method == "POST":
+                    blog.first_name = user_name
+                    blog.email_id = user
+                    blog.blog_category = profile_data
+                    blog.business_category = business_category
+                    if len(request.FILES) != 0:
+                        blog.blog_img = request.FILES['blog_img']
+                    blog.save()
+                form = ImageForm()
+                return render(request,"Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
+            else:
+                user_name = User.objects.get(username = user).first_name
+                messages.warning(request,"Please first complete your profile then start the blog")
+                return render(request,"Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
+        except:
+            form = ImageForm()
+            user = request.user
             user_name = User.objects.get(username = user).first_name
-            messages.warning(request,"Please first complete your profile then start the blog")
-            return render(request,"Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
-    except:
-        form = ImageForm()
-        user = request.user
-        user_name = User.objects.get(username = user).first_name
-        comment_data = Comment_data.objects.all().values()
-        blog_data = Blog_data.objects.all().values()
-        return render(request, "Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
+            comment_data = Comment_data.objects.all().values()
+            blog_data = Blog_data.objects.all().values()
+            return render(request, "Homepage/blog.html",{"username":user_name,"form":form,"blog_data":blog_data,"comment_data":comment_data})
+    else:
+        return render(request, "Homepage/blog.html")
 def comment_handler(request):
     if request.method == "POST":
         user = request.user
