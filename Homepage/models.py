@@ -4,7 +4,7 @@ from statistics import mode
 from django.db import models
 from phone_field import PhoneField
 from django.contrib.auth.models import User
-
+from PIL import Image
 
 class Profile_data(models.Model):
     user_id = models.AutoField
@@ -39,6 +39,12 @@ class Blog_data(models.Model):
 
     def __str__(self):
         return self.first_name
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        img = Image.open(self.blog_img.path)
+
+        
     
 class Comment_data(models.Model):
     comment_id = models.AutoField

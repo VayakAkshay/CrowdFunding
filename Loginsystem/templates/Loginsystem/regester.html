@@ -168,6 +168,14 @@
           display: block;
         }
       }
+      @media screen and (max-width: 400px){
+        .main .formdata .form form{
+          font-size: 18px;
+        }
+        .main .formdata .otpdata form{
+          font-size: 18px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -240,9 +248,12 @@
         "email":email_address,
       }
       localStorage.setItem("user_data",JSON.stringify(item));
-      console.log(localStorage.user_data); 
     })
     data = JSON.parse(localStorage.user_data);
+    document.getElementById("email").value = data["email"];
+    document.getElementById("fname").value = data["fname"];
+    document.getElementById("lname").value = data["lname"];
+    document.getElementById("mnumber").value = data["mobile"];
     document.getElementById("mail_id").value = data["email"];
   </script>
 </html>

@@ -51,6 +51,8 @@
                 <textarea class="form-control" id="" name="description" required rows="3"></textarea>
               </div>
               {{form}}
+              <div class="error_form" id="error_form" style="color: red;">
+              </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -182,6 +184,18 @@
       setTimeout(() => {
         document.getElementById("message").style.display = "none";
       }, 2000);
+    }
+
+    var upload_field = document.getElementById("id_blog_img");
+
+    upload_field.onchange = function(){
+      if(this.files[0].size > 1048576){
+        this.value = "";
+        document.getElementById("error_form").innerText = "File size must be less than 1 MB";
+      }
+      else{
+        document.getElementById("error_form").innerText = "";
+      }
     }
   </script>
   {% endblock %}

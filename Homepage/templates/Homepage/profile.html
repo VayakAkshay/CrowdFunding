@@ -97,7 +97,7 @@
             <div class="my_plan">
                 {% if i.business_plan|length < 1 %}
                 <form action="/plan_disc/" id="plan_text" method="post">{% csrf_token %}
-                    <label for="" class="form-label">Enter your Plan for Business</label>
+                    <label for="" class="form-label">Enter small description of your Plan for Business</label>
                     <textarea class="form-control" id="plan_input" name="plan_disc" rows="3" required></textarea>
                     <button type="submit" id="plan_submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
                 </form>
@@ -117,7 +117,6 @@
             </div>
                 {% endif %}
             </div>
-            
         </div>
 
         <div class="category">
@@ -134,23 +133,23 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Finance">
-                    <label class="form-check-label" for="inlineCheckbox2">Finance</label>
+                    <label class="form-check-label" for="inlineCheckbox3">Finance</label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Marketting">
-                    <label class="form-check-label" for="inlineCheckbox2">Marketting</label>
+                    <label class="form-check-label" for="inlineCheckbox4">Marketting</label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Management">
-                    <label class="form-check-label" for="inlineCheckbox2">Management</label>
+                    <label class="form-check-label" for="inlineCheckbox5">Management</label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Information Technology">
-                    <label class="form-check-label" for="inlineCheckbox2">Information Technology</label>
+                    <label class="form-check-label" for="inlineCheckbox6">Information Technology</label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="International Business">
-                    <label class="form-check-label" for="inlineCheckbox2">International Business</label>
+                    <label class="form-check-label" for="inlineCheckbox7">International Business</label>
                   </div><br><br>
                   <input type="text" name="checkbox_val" id="checkbox_val" hidden>
                   <button type="submit" id="checkbox_btn" class="btn btn-primary">Submit</button>
@@ -430,6 +429,9 @@
         }
         else{
             document.getElementById("plan_text").style.display = "none";
+            progress_bar  = progress_bar + 20;
+            document.getElementById("progress_text").textContent = progress_bar +"%";
+            document.getElementById("progress_bar").style.width = progress_bar + "%";
         }
     }
   </script>
