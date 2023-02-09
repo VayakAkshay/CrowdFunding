@@ -9,10 +9,6 @@
   margin: 0;
   padding: 0;
 }
-body{
-  overflow: hidden;
-  overflow-y: scroll;
-}
 .alert{
   width: 97%;
 }
@@ -20,14 +16,15 @@ body::-webkit-scrollbar {
   display: none;
 }
 body {
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 body .content{
   height: 100vh;
   width: 100%;
   background-image: url('{% static "images/background.png" %}');
-  /* background:  url(%("%s/background.png", @base)); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -39,7 +36,7 @@ body .content{
   justify-content: center;
   align-items: center;
 }
-.container{
+body .content .container{
   height: 500px;
   width: 55%;
   background-color: white;
@@ -50,36 +47,36 @@ body .content{
   background-size: cover;
   display: flex;
 }
-.container .content1{
+body .content .container .content1{
   height: 100%;
   width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container .content2{
+body .content .container .content2{
   height: 100%;
   width: 55%;
   font-family: 'Rubik', sans-serif;
 }
-.container .content2 .box1{
+body .content .container .content2 .box1{
   height: 33%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container .content2 .box2{
+body .content .container .content2 .box2{
   height: 33%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container .content2 .box2 h1{
+body .content .container .content2 .box2 h1{
   width: 80%;
 }
-.container .content2 .box3{
+body .content .container .content2 .box3{
   height: 33%;
   width: 100%;
   display: flex;
@@ -577,13 +574,13 @@ footer .policy{
 }
 
 @media screen and (max-width : 1200px) {
-  .container .content2 .box1 h4{
+  body .content .container .content2 .box1 h4{
     font-size: 20px;
   }
-  .container .content2 .box2 h1{
+  body .content .container .content2 .box2 h1{
     font-size: 30px;
   }
-  .container .content2 .box3 h4{
+  body .content .container .content2 .box3 h4{
     font-size: 20px;
   }
   main .step1{
@@ -600,7 +597,7 @@ footer .policy{
   }
 }
 @media screen and (max-width : 1100px) {
-  .container{
+  body .content .container{
     width: 65%;
   }
   figure .fields .boxs{
@@ -718,11 +715,11 @@ footer .policy{
     background-image: url('{% static "images/background-5.png" %}');
     background-size: contain;
   }
-  .container{
+  body .content .container{
     height: 450px;
     width: 75%;
   }
-  .container .content1 img{
+  body .content .container .content1 img{
     height: 400px;
   }
   main .step1{
@@ -752,11 +749,11 @@ footer .policy{
   }
 }
 @media screen and (max-width : 800px) {
-  .container{
+  body .content .container{
     height: 400px;
     width: 90%;
   }
-  .container .content1 img{
+  body .content .container .content1 img{
     height: 350px;
   }
   main .step1{
@@ -800,7 +797,7 @@ footer .policy{
   }
 }
 @media screen and (max-width : 600px) {
-  .container{
+  body .content .container{
     width: 95%;
   }
   figure{
@@ -852,20 +849,21 @@ footer .socialmedia{
   .main{
     height: 90vh;
   }
-  .container{
+  body .content .container{
     height: 400px;
     width: 95%;
   }
-  .container .content1 img{
+  body .content .container .content1 img{
     height: 300px;
+    width: 100%;
   }
-  .container .content2 .box1 h4{
+  body .content .container .content2 .box1 h4{
     font-size: 15px;
   }
-  .container .content2 .box2 h1{
+  body .content .container .content2 .box2 h1{
     font-size: 25px;
   }
-  .container .content2 .box3 h4{
+  body .content .container .content2 .box3 h4{
     font-size: 15px;
   }
   main .step1{
@@ -922,27 +920,27 @@ footer .socialmedia{
   }
 }
 @media screen and (max-width : 500px) {
-  .container{
-    height: 500px;
+  body .content .container{
+    height: 550px;
     flex-wrap: wrap;
     margin-top: 60px;
     background: linear-gradient(to top,white 50%,#5271ff 50%,#5271ff 100%);
   }
-  .container .content1{
+  body .content .container .content1{
+    height: auto;
+    width: 100%;
+  }
+  body .content .container .content2{
     height: 50%;
     width: 100%;
   }
-  .container .content2{
-    height: 50%;
-    width: 100%;
-  }
-  .container .content2 .box1{
+  body .content .container .content2 .box1{
     text-align: center;
   }
-  .container .content2 .box2{
+  body .content .container .content2 .box2{
     text-align: center;
   }
-  .container .content2 .box3{
+  body .content .container .content2 .box3{
     text-align: center;
   }
   figure .fields .overview .display{
@@ -1052,7 +1050,7 @@ footer .socialmedia{
 }
 @media screen and (max-width : 600px),
       screen and (max-height: 700px) {
-  .container{
+  body .content.container{
     margin-top: 100px;
   }
 }

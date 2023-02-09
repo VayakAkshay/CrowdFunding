@@ -31,26 +31,19 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {% block title %} Home - Crowdfunding {% endblock %}
     {% block style %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% load static %}
     <style>
+      body{
+        width: 100%;
+      }
       body .content{
         background-image: url('{% static "images/background.png" %}');
       }
-      .container{
+      body .content .container{
         background-image: url('{% static "images/background1.png" %}');
       }
-      @media screen and (max-width : 500px) {
-      .container{
-        background: linear-gradient(to top,white 50%,#5271ff 50%,#5271ff 100%);
-      }
-      }
-      @media screen and (max-width: 600px) {
-        .motivation .part1 .text h1{
-          font-size: 40px;
-        }
-      }
     </style>
-    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
   </head>
   <body>
