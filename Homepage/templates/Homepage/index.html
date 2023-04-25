@@ -2,276 +2,291 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-    <meta property="og:site_name" content="Crowdfunding" />
-    <meta property="og:title" content="Get funding for startup and invest in startup" />
-    <meta property="og:description" content="Interested in investing in and acquiring funds for new and existing businesses"/>
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="" />
-    <meta name="twitter:title" content="Get funding for startup and invest in startup" />
-    <meta name="twitter:description" content="Interested in investing in and acquiring funds for new and existing businesses" />
-    <meta name="twitter:image" content="{% static '/images/image3.png' %}" />
-    <meta name="twitter:url" content="" />
-    <meta property="og:title" content="Get funding for startup and invest in startup">
-    <meta property="og:site_name" content="Crowdfunding">
-    <meta property="og:url" content="">
-    <meta property="og:description" content="Interested in investing in and acquiring funds for new and existing businesses">
-    <meta property="og:type" content=website>
-    <meta property="og:image" content="{% static '/images/image3.png' %}">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Crowdfundings","description":"Would you like to invest in and acquire funds for new and existing businesses that you are interested in?"}</script>
-    <title>Home - Crowd Funding</title>
-    <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    {% block title %} Home - Crowdfunding {% endblock %}
-    {% block style %}
-    <style>
-      body{
-        width: 100%;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Crowdfundings","description":"Would you like to invest in and acquire funds for new and existing businesses that you are interested in?"}</script>
+  <title>Home - Crowd Funding</title>
+  <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  {% block title %} Home - Crowdfunding {% endblock %}
+  {% block style %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    body {
+      width: 100%;
+    }
+
+    body .content {
+      background-image: url('{% static "images/background.png" %}');
+    }
+
+    body .content .container {
+      background-image: url('{% static "images/background1.png" %}');
+    }
+
+    @media screen and (max-width : 1005px) {
+      body .content {
+        background-image: url('{% static "images/background-5.png" %}');
+        background-size: contain;
       }
-      body .content{
-        background-image: url('{% static "images/background.png" %}');
+    }
+
+    @media screen and (max-width : 500px) {
+      body .content .container {
+        background: linear-gradient(to top, white 50%, #5271ff 50%, #5271ff 100%);
       }
-      body .content .container{
-        background-image: url('{% static "images/background1.png" %}');
-      }
-    </style>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% endblock %}
-  </head>
-  <body>
-    {% block body %}
-    {% if messages %}
-    <ul class="messages" id="message" style="z-index: 3;">
-        {% for message in messages %}
-        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-          {{message}}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    }
+  </style>
+  {% endblock %}
+</head>
+
+<body>
+  {% block body %}
+  <div class="content">
+    <div class="main">
+      <div class="container">
+        <div class="content1">
+          <img src="{% static 'images/image3.png' %}" alt="">
         </div>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <div class="content" >
-      <div class="main">
-        <div class="container">
-          <div class="content1">
-            <img src="{% static 'images/image3.png' %}" alt="">
+        <div class="content2">
+          <div class="box1">
+            <h4>Paperless • Time saver • No strings</h4>
           </div>
-          <div class="content2">
-            <div class="box1">
-              <h4>Paperless  •  Time saver  •  No strings</h4>
-            </div>
-            <div class="box2">
-              <h1>Build your business with us</h1>
-            </div>
-            <div class="box3">
-              <h4 style="text-align: center;">Simple way to get funds from investors and invest in businesses.</h4>
-            </div>
+          <div class="box2">
+            <h1>Build your business with us</h1>
+          </div>
+          <div class="box3">
+            <h4 style="text-align: center;">Simple way to get funds from investors and invest in businesses.</h4>
           </div>
         </div>
       </div>
     </div>
-    <main>
-      <div class="heading">
-        <h1>How it works</h1>
-      </div>
+  </div>
+  <main>
+    <div class="heading">
+      <h1>How it works</h1>
+    </div>
 
-      <div class="step1">
-        <div class="textdata">
-          <div class="step">
-            <h4>STEP 1</h4>
-            <h1>Make Awasome Profile</h1>
-          </div>
-        </div>
-        <div class="image">
-          <img src="{% static 'images/profile.png' %}" alt="">
+    <div class="step1">
+      <div class="textdata">
+        <div class="step">
+          <h4>STEP 1</h4>
+          <h1>Make Awasome Profile</h1>
         </div>
       </div>
+      <div class="image">
+        <img src="{% static 'images/profile.png' %}" alt="">
+      </div>
+    </div>
 
-      <div class="step2">
-        <div class="image">
-          <img src="{% static 'images/request.png' %}" alt="">
+    <div class="step2">
+      <div class="image">
+        <img src="{% static 'images/request.png' %}" alt="">
+      </div>
+      <div class="textdata">
+        <div class="step">
+          <h4>STEP 2</h4>
+          <h1>Put Request on Request Board</h1>
         </div>
-        <div class="textdata">
-          <div class="step">
-            <h4>STEP 2</h4>
-            <h1>Put Request on Request Board</h1>
+      </div>
+    </div>
+
+    <div class="step3">
+
+      <div class="textdata">
+        <div class="step">
+          <h4>STEP 3</h4>
+          <h1>Conversation With Other</h1>
+        </div>
+      </div>
+
+      <div class="image">
+        <img src="{% static 'images/message.png' %}" alt="">
+      </div>
+
+    </div>
+
+    <div class="step4">
+
+      <div class="image">
+        <img src="{% static 'images/image1.png' %}" alt="">
+      </div>
+
+      <div class="textdata">
+        <div class="step">
+          <h4>STEP 4</h4>
+          <h1>Send and Receive Money</h1>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <figure>
+    <div class="heading">
+      <h1>Business Fields</h1>
+    </div>
+
+    <div class="fields">
+      <div class="boxs">
+        <div class="box">
+          <div class="field" id="field1">
+            <h5>Accounting</h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="field" id="field2">
+            <h5>Economic</h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="field" id="field3">
+            <h5>Finance</h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="field" id="field4">
+            <h5>Marketting</h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="field" id="field5">
+            <h5>Management</h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="field" id="field6">
+            <h5>International Business</h5>
           </div>
         </div>
       </div>
 
-      <div class="step3">
-
-        <div class="textdata">
-          <div class="step">
-            <h4>STEP 3</h4>
-            <h1>Conversation With Other</h1>
+      <div class="overview">
+        <div class="display">
+          <div class="contentdata" id="contentdata1">
+            <div class="imagepart">
+              <h3 style="color: green;">Accounting</h3>
+              <img src="{% static 'images/accounting.png' %}" alt="">
+            </div>
+            <div class="contentpart">
+              <div class="maincontent">
+                <p>Accounting involves recording, analysing and reporting financial transactions of businesses (e.g. how
+                  much a business owes its supplier). This is crucial as companies require this information to make
+                  strategic financial decisions. <br>
+                  From ensuring financial records are in order to making sure company taxes are paid on time, accounting
+                  is an indispensable function at every organisation, big or small.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="image">
-          <img src="{% static 'images/message.png' %}" alt="">
-        </div>
+          <div class="contentdata" id="contentdata2">
+            <div class="imagepart">
+              <h3 style="color: green;">Economic</h3>
+              <img src="{% static 'images/economic.jpg' %}" alt="">
+            </div>
+            <div class="contentpart">
+              <div class="maincontent">
+                <p>Economics graduates can find job opportunities in the government, research firms, think tanks as well
+                  as organisations that require economists to analyse how economic issues can affect their business
+                  (e.g. banks).
+                  If you are a good problem solver, have a keen eye for spotting or predicting trends, enjoy doing
+                  research and analysing data, then economics may just be for you.
+                </p>
+              </div>
+            </div>
+          </div>
 
+
+          <div class="contentdata" id="contentdata3">
+            <div class="imagepart">
+              <h3 style="color: green;">Finance</h3>
+              <img src="{% static 'images/finance.jpg' %}" alt="">
+            </div>
+            <div class="contentpart">
+              <div class="maincontent">
+                <p>Finance relates to the management of money, wealth and funds, be it for individuals or organisations.
+                  It encompasses concepts such as budgeting, borrowing, lending, saving and investing, all of which are
+                  crucial in the management of money.
+                  Finance graduates can seek opportunities in a number of industries, including the government, banks,
+                  securities trading companies and consultancy institutions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contentdata" id="contentdata4">
+            <div class="imagepart">
+              <h3 style="color: green;">Marketting</h3>
+              <img src="{% static 'images/marketting.png' %}" alt="">
+            </div>
+            <div class="contentpart">
+              <div class="maincontent">
+                <p>Marketing involves identifying, creating and communicating the value of a company’s product or
+                  services to a particular audience. From the advertisements you see on highway billboards to the coupon
+                  code you received in your email, marketing strategies are employed by businesses everywhere to make
+                  sales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contentdata" id="contentdata5">
+            <div class="imagepart">
+              <h3 style="color: green;">Management</h3>
+              <img src="{% static 'images/management.png' %}" alt="">
+            </div>
+            <div class="contentpart">
+              <div class="maincontent">
+                <p>Management is a broad field that looks at implementing business concepts to ensure that a business
+                  runs smoothly. You will learn how to handle a company’s resources efficiently to achieve its
+                  objectives, including how to plan, organise, direct and control business operations, from general
+                  business administration to supervising employees.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contentdata" id="contentdata6">
+            <div class="imagepart">
+              <h3 style="color: green;">International Business</h3>
+              <img src="{% static 'images/international.png' %}" alt="">
+            </div>
+            <div class="contentpart">
+              <div class="maincontent">
+                <p>International business is the study of business activities in an international context. It covers a
+                  range of general business management subjects, such as accounting, finance and marketing, as well as
+                  cultural, legal and political conditions that can affect business operations. This is particularly
+                  useful given that many companies today operate on a global scale.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <div class="step4">
+    </div>
+  </figure>
 
-        <div class="image">
-          <img src="{% static 'images/image1.png' %}" alt="">
-        </div>
-
-        <div class="textdata">
-          <div class="step">
-            <h4>STEP 4</h4>
-            <h1>Send and Receive Money</h1>
-          </div>
-        </div>
-
+  <div class="motivation">
+    <div class="part1">
+      <div class="text">
+        <h1>"The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is
+          guaranteed to fail is not taking risks."</h1>
       </div>
-    </main>
-
-    <figure>
-      <div class="heading">
-        <h1>Business Fields</h1>
-      </div>
-
-      <div class="fields">
-        <div class="boxs">
-          <div class="box">
-            <div class="field" id="field1">
-              <h5>Accounting</h5>
-            </div>
-          </div>
-          <div class="box">
-            <div class="field" id="field2">
-              <h5>Economic</h5>
-            </div>
-          </div>
-          <div class="box">
-            <div class="field" id="field3">
-              <h5>Finance</h5>
-            </div>
-          </div>
-          <div class="box">
-            <div class="field" id="field4">
-              <h5>Marketting</h5>
-            </div>
-          </div>
-          <div class="box">
-            <div class="field" id="field5">
-              <h5>Management</h5>
-            </div>
-          </div>
-          <div class="box">
-            <div class="field" id="field6">
-              <h5>International Business</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="overview">
-          <div class="display">
-            <div class="contentdata" id="contentdata1">
-              <div class="imagepart">
-                <h3 style="color: green;">Accounting</h3>
-                <img src="{% static 'images/accounting.png' %}" alt="">
-              </div>
-              <div class="contentpart">
-                <div class="maincontent">
-                  <p>Accounting involves recording, analysing and reporting financial transactions of businesses (e.g. how much a business owes its supplier). This is crucial as companies require this information to make strategic financial decisions. <br>
-                    From ensuring financial records are in order to making sure company taxes are paid on time, accounting is an indispensable function at every organisation, big or small.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contentdata" id="contentdata2">
-              <div class="imagepart">
-                <h3 style="color: green;">Economic</h3>
-                <img src="{% static 'images/economic.jpg' %}" alt="">
-              </div>
-              <div class="contentpart">
-                <div class="maincontent">
-                  <p>Economics graduates can find job opportunities in the government, research firms, think tanks as well as organisations that require economists to analyse how economic issues can affect their business (e.g. banks).
-                    If you are a good problem solver, have a keen eye for spotting or predicting trends, enjoy doing research and analysing data, then economics may just be for you.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="contentdata" id="contentdata3">
-              <div class="imagepart">
-                <h3 style="color: green;">Finance</h3>
-                <img src="{% static 'images/finance.jpg' %}" alt="">
-              </div>
-              <div class="contentpart">
-                <div class="maincontent">
-                  <p>Finance relates to the management of money, wealth and funds, be it for individuals or organisations. It encompasses concepts such as budgeting, borrowing, lending, saving and investing, all of which are crucial in the management of money.
-                    Finance graduates can seek opportunities in a number of industries, including the government, banks, securities trading companies and consultancy institutions.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contentdata" id="contentdata4">
-              <div class="imagepart">
-                <h3 style="color: green;">Marketting</h3>
-                <img src="{% static 'images/marketting.png' %}" alt="">
-              </div>
-              <div class="contentpart">
-                <div class="maincontent">
-                  <p>Marketing involves identifying, creating and communicating the value of a company’s product or services to a particular audience. From the advertisements you see on highway billboards to the coupon code you received in your email, marketing strategies are employed by businesses everywhere to make sales.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contentdata" id="contentdata5">
-              <div class="imagepart">
-                <h3 style="color: green;">Management</h3>
-                <img src="{% static 'images/management.png' %}" alt="">
-              </div>
-              <div class="contentpart">
-                <div class="maincontent">
-                  <p>Management is a broad field that looks at implementing business concepts to ensure that a business runs smoothly. You will learn how to handle a company’s resources efficiently to achieve its objectives, including how to plan, organise, direct and control business operations, from general business administration to supervising employees.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contentdata" id="contentdata6">
-              <div class="imagepart">
-                <h3 style="color: green;">International Business</h3>
-                <img src="{% static 'images/international.png' %}" alt="">
-              </div>
-              <div class="contentpart">
-                <div class="maincontent">
-                  <p>International business is the study of business activities in an international context. It covers a range of general business management subjects, such as accounting, finance and marketing, as well as cultural, legal and political conditions that can affect business operations. This is particularly useful given that many companies today operate on a global scale.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </figure>
-
-    <div class="motivation">
-      <div class="part1">
-        <div class="text"><h1>"The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is guaranteed to fail is not taking risks."</h1></div>
-      </div>
-      <div class="part2">
-       <div class="contentpart1">
+    </div>
+    <div class="part2">
+      <div class="contentpart1">
         <div class="card1">
           <div class="cards">
             <img src="{% static 'images/tata.png' %}" alt="">
@@ -290,8 +305,8 @@
             </div>
           </div>
         </div>
-       </div>
-       <div class="contentpart2">
+      </div>
+      <div class="contentpart2">
         <div class="card1">
           <div class="cards">
             <img src="{% static 'images/elon.png' %}" alt="">
@@ -310,125 +325,114 @@
             </div>
           </div>
         </div>
-       </div>
       </div>
     </div>
-    <div class="userdesk">
-      <div class="investor">
-        <div class="box">
-          <div class="imagepart">
-            <img src="{% static 'images/investor.png' %}" alt="">
-          </div>
-          <div class="maincontent">
-            <h1>Are you an investor ?</h1><br><br>
-            <h5>We are thrilled to have you on board as an investor and believe that your support and guidance will be invaluable as we work towards our goals.
-            </h5>
-          </div>
-          <div class="button">
-            <button>Join to invest</button>
-          </div>
+  </div>
+  <div class="userdesk">
+    <div class="investor">
+      <div class="box">
+        <div class="imagepart">
+          <img src="{% static 'images/investor.png' %}" alt="">
         </div>
-      </div>
-      <div class="startup">
-        <div class="box">
-          <div class="imagepart">
-            <img src="{% static 'images/startup.png' %}" alt="">
-          </div>
-          <div class="maincontent">
-            <h1>Are you a Borrower?</h1><br><br>
-            <h5>We are thrilled to have you join us as a borrower and believe that your creativity, enthusiasm, and hard work will help us to achieve great things.
-            </h5>
-          </div>
-          <div class="button">
-            <button>Join to raise fund</button>
-          </div>
+        <div class="maincontent">
+          <h1>Are you an investor ?</h1><br><br>
+          <h5>We are thrilled to have you on board as an investor and believe that your support and guidance will be
+            invaluable as we work towards our goals.
+          </h5>
+        </div>
+        <div class="button">
+          <button>Join to invest</button>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="logopart"><h1 style="cursor: pointer;">Crowd Funding</h1></div>
-      <div class="socialmedia">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-        <a href="#" class="fa fa-youtube"></a>
-        <a href="#" class="fa fa-instagram"></a>
+    <div class="startup">
+      <div class="box">
+        <div class="imagepart">
+          <img src="{% static 'images/startup.png' %}" alt="">
+        </div>
+        <div class="maincontent">
+          <h1>Are you a Borrower?</h1><br><br>
+          <h5>We are thrilled to have you join us as a borrower and believe that your creativity, enthusiasm, and hard
+            work will help us to achieve great things.
+          </h5>
+        </div>
+        <div class="button">
+          <button>Join to raise fund</button>
+        </div>
       </div>
-      <div class="policy" style="padding-bottom: 10px;">
-        <h6>DISCLAIMER: Crowdfunding Technologies Pvt Ltd is NOT a stock exchange recognised by the Securities Exchange Board of India (SEBI) under the Securities Contract (Regulation) Act, 1956. The securities offered by any company registered on crowdfunding.com (“Platform”) are not traded on any stock exchange recognised by SEBI. crowdfunding does not allow any secondary market trading of securities on the Platform.
-        </h6>
-      </div>
-    </footer>
-    {% endblock %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  </body>
-  {% block script %}
+    </div>
+  </div>
+  {% include "Homepage\footer.html" %}
+  {% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+</body>
+{% block script %}
 
-  <script>
+<script>
+  document.getElementById('contentdata1').style.display = "block";
+  document.getElementById('contentdata2').style.display = "none";
+  document.getElementById('contentdata3').style.display = "none";
+  document.getElementById('contentdata4').style.display = "none";
+  document.getElementById('contentdata5').style.display = "none";
+  document.getElementById('contentdata6').style.display = "none";
+
+  document.getElementById('field1').addEventListener('click', function () {
     document.getElementById('contentdata1').style.display = "block";
     document.getElementById('contentdata2').style.display = "none";
     document.getElementById('contentdata3').style.display = "none";
     document.getElementById('contentdata4').style.display = "none";
     document.getElementById('contentdata5').style.display = "none";
     document.getElementById('contentdata6').style.display = "none";
+  })
 
-    document.getElementById('field1').addEventListener('click',function(){
-      document.getElementById('contentdata1').style.display = "block";
-      document.getElementById('contentdata2').style.display = "none";
-      document.getElementById('contentdata3').style.display = "none";
-      document.getElementById('contentdata4').style.display = "none";
-      document.getElementById('contentdata5').style.display = "none";
-      document.getElementById('contentdata6').style.display = "none";
-    })
+  document.getElementById('field2').addEventListener('click', function () {
+    document.getElementById('contentdata1').style.display = "none";
+    document.getElementById('contentdata2').style.display = "block";
+    document.getElementById('contentdata3').style.display = "none";
+    document.getElementById('contentdata4').style.display = "none";
+    document.getElementById('contentdata5').style.display = "none";
+    document.getElementById('contentdata6').style.display = "none";
+  })
 
-    document.getElementById('field2').addEventListener('click',function(){
-      document.getElementById('contentdata1').style.display = "none";
-      document.getElementById('contentdata2').style.display = "block";
-      document.getElementById('contentdata3').style.display = "none";
-      document.getElementById('contentdata4').style.display = "none";
-      document.getElementById('contentdata5').style.display = "none";
-      document.getElementById('contentdata6').style.display = "none";
-    })
+  document.getElementById('field3').addEventListener('click', function () {
+    document.getElementById('contentdata1').style.display = "none";
+    document.getElementById('contentdata2').style.display = "none";
+    document.getElementById('contentdata3').style.display = "block";
+    document.getElementById('contentdata4').style.display = "none";
+    document.getElementById('contentdata5').style.display = "none";
+    document.getElementById('contentdata6').style.display = "none";
+  })
 
-    document.getElementById('field3').addEventListener('click',function(){
-      document.getElementById('contentdata1').style.display = "none";
-      document.getElementById('contentdata2').style.display = "none";
-      document.getElementById('contentdata3').style.display = "block";
-      document.getElementById('contentdata4').style.display = "none";
-      document.getElementById('contentdata5').style.display = "none";
-      document.getElementById('contentdata6').style.display = "none";
-    })
+  document.getElementById('field4').addEventListener('click', function () {
+    document.getElementById('contentdata1').style.display = "none";
+    document.getElementById('contentdata2').style.display = "none";
+    document.getElementById('contentdata3').style.display = "none";
+    document.getElementById('contentdata4').style.display = "block";
+    document.getElementById('contentdata5').style.display = "none";
+    document.getElementById('contentdata6').style.display = "none";
+  })
 
-    document.getElementById('field4').addEventListener('click',function(){
-      document.getElementById('contentdata1').style.display = "none";
-      document.getElementById('contentdata2').style.display = "none";
-      document.getElementById('contentdata3').style.display = "none";
-      document.getElementById('contentdata4').style.display = "block";
-      document.getElementById('contentdata5').style.display = "none";
-      document.getElementById('contentdata6').style.display = "none";
-    })
+  document.getElementById('field5').addEventListener('click', function () {
+    document.getElementById('contentdata1').style.display = "none";
+    document.getElementById('contentdata2').style.display = "none";
+    document.getElementById('contentdata3').style.display = "none";
+    document.getElementById('contentdata4').style.display = "none";
+    document.getElementById('contentdata5').style.display = "block";
+    document.getElementById('contentdata6').style.display = "none";
+  })
 
-    document.getElementById('field5').addEventListener('click',function(){
-      document.getElementById('contentdata1').style.display = "none";
-      document.getElementById('contentdata2').style.display = "none";
-      document.getElementById('contentdata3').style.display = "none";
-      document.getElementById('contentdata4').style.display = "none";
-      document.getElementById('contentdata5').style.display = "block";
-      document.getElementById('contentdata6').style.display = "none";
-    })
+  document.getElementById('field6').addEventListener('click', function () {
+    document.getElementById('contentdata1').style.display = "none";
+    document.getElementById('contentdata2').style.display = "none";
+    document.getElementById('contentdata3').style.display = "none";
+    document.getElementById('contentdata4').style.display = "none";
+    document.getElementById('contentdata5').style.display = "none";
+    document.getElementById('contentdata6').style.display = "block";
+  })
+</script>
+{% endblock %}
 
-    document.getElementById('field6').addEventListener('click',function(){
-      document.getElementById('contentdata1').style.display = "none";
-      document.getElementById('contentdata2').style.display = "none";
-      document.getElementById('contentdata3').style.display = "none";
-      document.getElementById('contentdata4').style.display = "none";
-      document.getElementById('contentdata5').style.display = "none";
-      document.getElementById('contentdata6').style.display = "block";
-    })
-    setTimeout(() => {
-      document.getElementById("message").style.display = "none";
-    }, 2000);
-  </script>
-  {% endblock %}
 </html>

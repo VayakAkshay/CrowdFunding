@@ -1,112 +1,148 @@
-{% extends "Homepage/basic.html" %}
+{% extends 'Homepage/basic.html' %}
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% block title %} Blogs- Crowdfunding{% endblock %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    {% block style %}
-    <style>
-      .container .header{
-        border: none;
-        padding: 0%;
-        cursor:all-scroll;
-      }
-      .container .contain .profile-data a{
-        text-decoration: none;
-      }
-      .container .contain .profile-data a .name{
-        color: black;
-      }
-    </style>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    {% endblock %}
-  </head>
-  <body>
-    {% block body %}
-    {% if messages %}
-    <ul class="messages" id="message" style="z-index: 3;">
-        {% for message in messages %}
-        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-          {{message}}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block title %}Blogs - Crowd Funding{% endblock %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  {% block style %}
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  <style>
+    
+  </style>
+  {% endblock %}
+</head>
+
+<body>
+  {% block body %}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Start POST</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% if user.is_authenticated %}
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Start POST</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <form action="/blogs/" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <form action="/blogs/" method="post" enctype="multipart/form-data">{% csrf_token %}
           <div class="modal-body">
-              <div class="mb-3">
-                <label for="" class="form-label">Enter Description</label>
-                <textarea class="form-control" id="" name="description" required rows="3"></textarea>
-              </div>
-              {{form}}
-              <div class="error_form" id="error_form" style="color: red;">
-              </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Enter Description</label>
+              <textarea class="form-control" id="" name="description" required rows="3"></textarea>
+            </div>
+            {{form}}
+            <div class="error_form" id="error_form" style="color: red;">
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">POST</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+  {% if user.is_authenticated %}
+  <div class="content">
+    <div class="box1">
+      <div class="box">
+        <div class="img-part">
+          <img src="/media/{{profile_img}}" alt="">
+        </div>
+        <div class="use-part">
+          <h6 style="text-align: center;"><a style="color: black;" href="/profile/">{{user.first_name}} {{user.last_name}}</a></h6>
+        </div>
+        <div class="search-bar">
+          <form action="/search-blog/" method="post">{% csrf_token %}
+            <div class="search-box">
+              <input type="text" class="search-input" name="search_data" placeholder="Search..">
+              <button type="submit" class="search-button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="filter-item">
+          <form action="/filter-blog/" method="post">{% csrf_token %}
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="All">
+              <label class="form-check-label" for="inlineCheckbox10">All</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Investor">
+              <label class="form-check-label" for="inlineCheckbox8">Investor</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="Borrower">
+              <label class="form-check-label" for="inlineCheckbox9">Borrower</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Accounting">
+              <label class="form-check-label" for="inlineCheckbox1">Accounting</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Economic">
+              <label class="form-check-label" for="inlineCheckbox2">Economic</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Finance">
+              <label class="form-check-label" for="inlineCheckbox3">Finance</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Marketting">
+              <label class="form-check-label" for="inlineCheckbox4">Marketting</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Management">
+              <label class="form-check-label" for="inlineCheckbox5">Management</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Information Technology">
+              <label class="form-check-label" for="inlineCheckbox6">Information Technology</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="International Business">
+              <label class="form-check-label" for="inlineCheckbox7">International Business</label>
+            </div><br>
+            <input type="text" name="categories" id="checkbox_val" hidden>
+            <button type="submit"><i class="fa fa-filter"></i> Filter</button>
+          </form>
         </div>
       </div>
     </div>
-    <div class="container">
-        <div id="header_part" class="header">
-          <a href="/blogs/"><button type="button" class="btn btn-primary">All</button></a>
-          <a href="/blogs/investor/"><button type="button" class="btn btn-primary">Investor</button></a>
-          <a href="/blogs/borrower/"><button type="button" class="btn btn-primary">Borrower</button></a>
-          <a href="/blogs/accouting/"><button type="button" class="btn btn-primary">Accounting</button></a>
-          <a href="/blogs/it/"><button type="button" class="btn btn-primary">IT</button></a>
-          <a href="/blogs/economic/"><button type="button" class="btn btn-primary">Economic</button></a>
-          <a href="/blogs/finance/"><button type="button" class="btn btn-primary">Finance</button></a>
-          <a href="/blogs/marketting/"><button type="button" class="btn btn-primary">Marketting</button></a>
-          <a href="/blogs/management/"><button type="button" class="btn btn-primary">Management</button></a>
-          <a href="/blogs/ib/"><button type="button" class="btn btn-primary">IB</button></a>
-
-        </div>
-
-        <div class="content">
+    <div class="box2">
+      <div class="box">
+        <div class="contain" style="display: flex;">
           <div class="profile">
-            <a href=""><i style='font-size:30px' class='fas'>&#xf406;</i></a>
+            <img src="/media/{{profile_img}}" alt="">
           </div>
-          <input type="text" name="" style="padding-left: 10px;" placeholder="Start a post" id="" data-bs-toggle="modal" data-bs-target="#exampleModal" disabled>
+          <input type="text" name="" style="padding-left: 10px;" placeholder="Start a post" id="" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" disabled>
         </div>
         {% for i in blog_data %}
         <div class="contain">
           <div class="profile-data">
-            <div class="profile-img">
-              <i style='font-size:30px' class='fas'>&#xf406;</i>
-            </div>
             <form action="/profiles/" method="post">{% csrf_token %}
+              <div class="profile-img">
+                <img src="/media/{{i.user_img}}" alt="">
+              </div>
               <input type="text" name="email_id" value="{{i.email_id}}" id="" hidden>
               <button type="submit" style="border: none; background-color: transparent;">
-                <div class="name"><b>{{i.first_name}}</b> 
-                  ({{i.blog_category}})
+                <div class="name"><b>{{i.full_name}} ({{i.blog_category}})</b>
                 </div>
               </button>
             </form>
           </div>
           <div class="content-data">
             <div class="main-content">
-              <p>{{i.blog_desc}}</p>
+              <p style="color: black;">{{i.blog_desc}}</p>
             </div>
             <div class="content-img">
               <img src="/media/{{i.blog_img}}" alt="">
             </div>
           </div>
-          <!-- <span>{{i.id}}</span> -->
           <div class="content-social">
             <div class="like-btn">
               <i onclick="toggleButton(this)" class="fa fa-thumbs-up"></i>
@@ -123,8 +159,9 @@
               <i style='font-size:25px; margin-right: 10px;' class='fas'>&#xf406;</i>
               <form action="/comment/" method="post">{% csrf_token %}
                 <input type="text" name="post_id" id="" value="{{i.id}}" hidden>
-                <input type="text" name="comment_data" style="padding-left: 10px;" placeholder="Add comment" id="" required>
-                <button type="submit"  class="btn btn-primary">Add</button>
+                <input type="text" name="comment_data" style="padding-left: 10px;" placeholder="Add comment" id=""
+                  required>
+                <button type="submit" class="btn btn-primary">Add</button>
               </form>
             </div>
             <div class="comments">
@@ -136,67 +173,208 @@
               </div>
               <div class="comment-content">
                 {{j.comment}}
-              </div><hr>
+              </div>
+              <hr>
               {% endif %}
-              {% endfor %} 
+              {% endfor %}
             </div>
           </div>
         </div>
         {% endfor %}
+      </div>
     </div>
-    {% else %}
-      <div class="container">
-        <div class="picture" style="margin-top: 200px; text-align: center;">
-          <h1>Page not found</h1>
-          <h5>Please first go to login </h5>
-          <div class="buttonarea">
-            <a href="/login/"><button type="button" name="id" class="btn btn-primary">Login</button>
-            </a>
+  </div>
+  {% else %}
+
+  <section class="page_404">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 ">
+          <div class="col-sm-10 col-sm-offset-1  text-center">
+            <div class="four_zero_four_bg">
+              <h1 class="text-center ">404</h1>
+            </div>
+            <div class="contant_box_404">
+              <h3 class="h2">
+                Look like you're lost
+              </h3>
+              <p>the page you are looking for not avaible!</p>
+
+              <a href="/" class="link_404">Go to Home</a>
+            </div>
           </div>
         </div>
       </div>
-    {% endif %}
-    {% endblock %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
-  {% block script %}
-  <script>
-    let id;
-    function reply_click()
-    {
-      id = event.srcElement.id;
-      var x = document.getElementById("comment" + id);
-      if (x.style.display == "block") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "block";
-      }
-    }
-    function toggleButton(x) {
-      x.classList.toggle("fa-thumbs-down");
-    }
-    var ele = ["Ak","jk","dk"];
-    var index = ele.indexOf("jk");
-    if (index !== -1) {
-      ele.splice(index, 1);
-    }
-    if(document.getElementById("message")!=null){
-      setTimeout(() => {
-        document.getElementById("message").style.display = "none";
-      }, 2000);
-    }
+    </div>
+  </section>
 
-    var upload_field = document.getElementById("id_blog_img");
-
-    upload_field.onchange = function(){
-      if(this.files[0].size > 1048576){
-        this.value = "";
-        document.getElementById("error_form").innerText = "File size must be less than 1 MB";
-      }
-      else{
-        document.getElementById("error_form").innerText = "";
-      }
-    }
-  </script>
+  {% endif %}
   {% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
+{% block script %}
+<script>
+  let id;
+  function reply_click() {
+    id = event.srcElement.id;
+    var x = document.getElementById("comment" + id);
+    if (x.style.display == "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+  function toggleButton(x) {
+    x.classList.toggle("fa-thumbs-down");
+  }
+
+  if (document.getElementById("message") != null) {
+    setTimeout(() => {
+      document.getElementById("message").style.display = "none";
+    }, 2000);
+  }
+  let field_str = ",All";
+  document.getElementById("inlineCheckbox10").checked = true;
+  document.getElementById("checkbox_val").value = field_str;
+  console.log(document.getElementById("checkbox_val").value)
+  if (document.getElementById("inlineCheckbox1") != null) {
+    document.getElementById("inlineCheckbox1").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox1").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox1").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox1").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+    document.getElementById("inlineCheckbox2").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox2").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox2").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox2").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+    document.getElementById("inlineCheckbox3").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox3").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox3").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox3").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+    document.getElementById("inlineCheckbox4").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox4").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox4").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox4").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+    document.getElementById("inlineCheckbox5").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox5").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox5").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox5").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+    document.getElementById("inlineCheckbox6").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox6").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox6").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox6").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+    document.getElementById("inlineCheckbox7").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox7").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox7").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox7").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+
+    document.getElementById("inlineCheckbox8").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox8").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox8").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox8").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+
+    document.getElementById("inlineCheckbox9").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox9").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox9").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox9").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+
+    document.getElementById("inlineCheckbox10").addEventListener("click", () => {
+      if (document.getElementById("inlineCheckbox10").checked) {
+        chackbox_val = document.getElementById("inlineCheckbox10").value;
+        field_str = field_str + "," + chackbox_val;
+        field_str = field_str.replace("All", "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+      else {
+        chackbox_val = document.getElementById("inlineCheckbox10").value;
+        field_str = field_str.replace(chackbox_val, "");
+        document.getElementById("checkbox_val").value = field_str;
+      }
+    })
+  }
+</script>
+{% endblock %}

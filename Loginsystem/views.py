@@ -25,12 +25,12 @@ def LoginPage(request):
     
 def RegesterPage(request):
     enable_otp = 0
-
     if request.method == "POST":
         first_name = request.POST.get("fname")
         last_name = request.POST.get("lname")
         email = request.POST.get("email")
         m_number = request.POST.get("mnumber")
+        OTP_Data.objects.filter(email_id = email).all().delete()
         if User.objects.filter(username=email).exists():
             messages.warning(request,"This user is already exist")
         else:
@@ -83,7 +83,7 @@ def forgot_otp(request):
     if request.method == "POST":
         email = request.POST.get("email_id")
         user = User.objects.filter(username = email)
-        print(user)
+        OTP_Data.objects.filter(email_id = email).all().delete()
         if user is not None:
             otp_generate = random.randrange(1000, 9999)
             OTP_data = OTP_Data(email_id = email,otp = otp_generate)
@@ -120,7 +120,6 @@ def forgot_pass(request):
         print(mydata)
         otp_field = str(mydata)[-7:-3]
         print(otp_field)
-        print("DKMD")
         if otp == otp_field:
             otp_data = OTP_Data.objects.filter(email_id = email)
             otp_data.delete()

@@ -15,7 +15,7 @@
       }
       body{
         height: 100vh;
-        background-image: url('{% static "images/background.jpg" %}');
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -32,7 +32,7 @@
         height: 400px;
         width: 40%;
         background-color: white;
-        border-radius: 40px;
+        border-radius: 10px;
         display: flex;
         padding: 10px;
       }
@@ -166,7 +166,7 @@
       if(document.getElementById("message")!=null){
         document.getElementById("message").style.display = "none";
       }
-    }, 2000);
+    }, 4000);
     document.getElementById("email_data").addEventListener("click",()=>{
       let mail = document.getElementById("email").value;
       let item = {

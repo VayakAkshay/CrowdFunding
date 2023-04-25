@@ -1,231 +1,266 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-body {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;
-  /* background-color: #eeeffc; */
-  /* background-color: white; */
-}
-.container{
-    width: 70%;
-    margin-top: 150px;
-}
-.container .profile{
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.container {
+    margin-top: 120px;
     display: flex;
-}
-.container .profile .profile_picture{
-    height: auto;
-    width: 100px;
-}
-.container .profile .profile_picture img{
-    height: 110px;
-    width: 110px;
-    cursor: pointer;
-}
-.container .profile .profile_disc{
-    height: auto;
-    width: 60%;
-    padding-left: 30px;
-}
-.container .profile .edit_profile{
-    height: auto;
-    width: auto;
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-}
-.container .profile_complete{
-    margin-top: 50px;
-    height: auto;
-}
-.container .profile_type{
-    height: auto;
-    margin-top: 30px;
-}
-.container .profile_type .types{
-    height: auto;
-    width: auto;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 10px;
 }
 
-.container .about{
+.container .box1 {
     height: auto;
-    margin-top: 20px;
+    width: 45%;
 }
-.container .about_content{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+.container .box1 .user-data {
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #394264;
 }
-.container .about .about_you{
-    height: 100%;
-    width: 100%;
-}
-.container .about .edit_btn{
-    height: 100%;
+
+.container .box1 .user-info {
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
 }
-.container .plan{
-    height: auto;
-    margin-top: 20px;
-    display: flex;
+
+.container .box1 .user-info .user-img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
 }
-.container .plan .my_plan{
+
+.container .box1 .user-info .user-img img {
     height: 100%;
     width: 100%;
+    border-radius: 50%;
 }
-.container .plan .edit_btn{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container .category{
+
+.container .box1 .user-info .user-details {
     height: auto;
-    font-size: 20px;
-    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
     padding: 10px;
 }
-.container .activity{
-    height: auto;
-    margin-top: 30px;
-    padding: 10px;
+
+.container .box1 .contact-details {
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #394264;
+    margin-top: 20px;
+    color: white;
+    padding: 20px;
 }
-.activity .content{
+
+.container .box1 .user-info .user-details button {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container .box1 .about-user {
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #394264;
+    margin-top: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.container .box2 {
     height: auto;
-    width: 50%;
+    width: 45%;
+}
+
+.container .box2 .content{
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #394264;
+    padding: 10px;
+    color: white;
+}
+
+.container .box2 .content .contain {
+    height: auto;
     background-color: white;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
-.activity .content .profile-data{
-  height: 50px;
-  width: auto;
-  display: flex;
-  align-items: center;
+
+.container .box2 .content .contain .profile-data {
+    height: 50px;
+    width: auto;
+    display: flex;
+    align-items: center;
 }
-.activity .content .profile-data .profile-img{
-  height: 40px;
-  width: 40px;
-  margin-left: 20px;
-  border-radius: 50%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+
+.container .box2 .content .contain .profile-data .profile-img {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.activity .content .profile-data .name{
-  height: 40px;
-  margin-left: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.container .box2 .content .contain .profile-data a .name {
+    height: 40px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
 }
-.activity .content .content-data{
-  height: auto;
+
+.container .box2 .content .contain .profile-data a {
+    list-style: none;
 }
-.activity .content .content-data .main-content{
-  height: auto;
-  overflow: scroll;
-  -ms-overflow-style: none; 
-  scrollbar-width: none;
-  margin-left: 10px;
+
+.container .box2 .content .contain .content-data {
+    height: auto;
+}
+
+.container .box2 .content .contain .content-data .main-content {
+    height: auto;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-left: 10px;
 }
 
 .main-content::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
-.activity .content .content-data .content-img{
-  height: 100%;
-  width: 100%;
-}
-.activity .content .content-data .content-img img{
-  height: 100%;
-  width: 100%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-.container .logout{
-    height: 50px;
-    margin-top: 50px;
-}
-.container .logout button{
+
+.container .box2 .content .contain .content-data .content-img {
+    height: 100%;
     width: 100%;
-    background-color: black;
-    border: none;
 }
-@media screen and (max-width: 900px){
-    .container{
-        width: 80%;
-    }
+
+.container .box2 .content .contain .content-data .content-img img {
+    height: 100%;
+    width: 100%;
 }
-@media screen and (max-width: 900px){
-    .container{
+
+.container .box2 .content .contain .content-social {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.container .box2 .content .contain .content-social .like-btn {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.container .box2 .content .contain .content-social .like-btn i {
+    cursor: pointer;
+    color: black;
+}
+
+.container .box2 .content .contain .content-social .like-btn .fa {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container .box2 .content .contain .content-social .like-btn .fa:hover {
+    color: darkblue;
+}
+
+.container .box2 .content .contain .content-social .comment-btn {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box2 .content .contain .content-social .comment-btn i {
+    cursor: pointer;
+}
+
+.container .box2 .content .contain .content-social .share-btn {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box2 .content .contain .content-social .share-btn i {
+    cursor: pointer;
+}
+
+.container .box2 .content .contain .comment_part {
+    max-height: auto;
+    overflow: scroll;
+    display: none;
+    overflow-x: hidden;
+}
+
+.comment_part::-webkit-scrollbar {
+    display: none;
+}
+
+.container .box2 .content .contain .comment_part .add_comment {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box2 .content .contain .comment_part .add_comment input {
+    height: 35px;
+    width: 300px;
+    margin-right: 20px;
+    border: 0.5px solid black;
+    border-radius: 20px;
+}
+
+.container .box2 .content .contain .comment_part .comments {
+    height: 100px;
+    color: black;
+}
+
+.container .box2 .content .contain .comment_part .comments .user_desk {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.container .box2 .content .contain .comment_part .comments .comment-content {
+    height: auto;
+    padding: 5px;
+    color: black;
+}
+@media screen and (max-width: 768px) {
+    .container .box1{
         width: 90%;
+        margin: 0;
     }
-    .activity .content{
-        width: 60%;
-    }
-}
-@media screen and (max-width: 800px){
-    .container{
-        width: 100%;
-    }
-    .activity .content{
-        width: 70%;
-    }
-}
-@media screen and (max-width: 500px){
-    .container{
-        width: 100%;
-    }
-    .activity .content{
-        width: 80%;
-    }
-    .container .profile{
-        flex-wrap: wrap;
-    }
-    .container .profile .profile_disc{
-        width: auto;
-    }
-    .container .profile .edit_profile{
-        width: 100%;
-    }
-}
-@media screen and (max-width: 450px){
-    .container .profile_type .types button{
-        margin-top: 15px;
-    }
-}
-@media screen and (max-width: 400px){
-    .activity .content{
-        width: 100%;
-    }
-    .container .profile{
-        flex-wrap: wrap;
-    }
-    .container .profile .profile_picture{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .container .profile .profile_disc{
-        width: 100%;
-        text-align: center;
-    }
-    .container .profile .edit_profile{
+    .container .box2{
+        width: 90%;
+        margin: 0;
         margin-top: 10px;
+    }
+    .container .box2 .content{
+        margin: 0;
     }
 }

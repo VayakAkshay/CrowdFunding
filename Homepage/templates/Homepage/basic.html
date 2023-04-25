@@ -1,285 +1,385 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %} {% endblock %}</title>
-    <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <style>
-      header{
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:site_name" content="Crowdfunding" />
+  <meta property="og:title" content="Get funding for startup and invest in startup" />
+  <meta property="og:description"
+    content="Interested in investing in and acquiring funds for new and existing businesses" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:title" content="Get funding for startup and invest in startup" />
+  <meta name="twitter:description"
+    content="Interested in investing in and acquiring funds for new and existing businesses" />
+  <meta name="twitter:image" content="{% static '/images/image3.png' %}" />
+  <meta name="twitter:url" content="" />
+  <meta property="og:title" content="Get funding for startup and invest in startup">
+  <meta property="og:site_name" content="Crowdfunding">
+  <meta property="og:url" content="">
+  <meta property="og:description"
+    content="Interested in investing in and acquiring funds for new and existing businesses">
+  <meta property="og:type" content=website>
+  <meta property="og:image" content="{% static '/images/image3.png' %}">
+  <title>{% block title %} {% endblock %}</title>
+  <link rel="icon" href="{% static 'images/cf.png' %}">
+  <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    header {
+      height: 100px;
+      width: 100%;
+      overflow: hidden;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      display: flex;
+      font-family: 'Rubik', sans-serif;
+      flex-wrap: wrap;
+      z-index: 10;
+    }
+
+    header .logo {
+      height: 100px;
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      color: white;
+    }
+
+    header .logo a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header .navbar {
+      height: 100px;
+      width: 70%;
+      display: flex;
+      align-items: center;
+    }
+
+    header .navbar ul {
+      display: flex;
+      align-items: center;
+    }
+
+    header .navbar ul li {
+      list-style: none;
+      display: inline-block;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    header .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+
+    header .navbar .nav2 ul li button {
+      height: 50px;
+      width: 90px;
+      background-color: white;
+      border-radius: 10px;
+      color: black;
+    }
+
+    header .navbar .nav2 ul li .userbutton {
+      width: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    header .navbar .nav2 ul li button a {
+      color: black;
+    }
+
+    .menu {
+      display: inline-block;
+      cursor: pointer;
+      padding: 30px;
+      position: static;
+      display: none;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .change .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+
+    @media screen and (max-width : 1005px) {
+      .menu {
+        display: block;
+      }
+
+      header {
         height: 100px;
+      }
+
+      header .navbar {
+        justify-content: end;
+        animation-duration: 1s;
+      }
+
+      header .navbar .nav1 {
+        display: none;
+      }
+
+      header .navbar .nav2 {
+        display: none;
+      }
+
+      header .dropdownmenu .nav1 {
+        height: 75%;
+      }
+
+      header .dropdownmenu .nav2 {
+        margin-top: 0;
+      }
+
+      header .dropdownmenu {
+        height: 400px;
         width: 100%;
-        overflow: hidden;
-        background-color: black;
-        position: fixed;
-        top: 0;
-        display: flex;
-        font-family: 'Rubik', sans-serif;
-        flex-wrap: wrap;
+        animation-duration: 1s;
       }
-      header .logo{
-        height: 100px;
-        width: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 25px;
-        color: white;
+
+      header .dropdownmenu ul {
+        padding: 20px;
+        text-align: center;
       }
-      header .logo a{
-        text-decoration: none;
-        color: white;
-      }
-      header .navbar{
-        height: 100px;
-        width: 70%;
-        display: flex;
-        align-items: center;
-      }
-      header .navbar ul{
-        display: flex;
-        align-items: center;
-      }
-      header .navbar ul li{
+
+      header .dropdownmenu ul li {
         list-style: none;
-        display: inline-block;
         margin-left: 20px;
         margin-right: 20px;
+        padding: 10px;
       }
-      header .navbar ul li a{
+
+      header .dropdownmenu ul li a {
         text-decoration: none;
         color: white;
         font-size: 20px;
       }
-      header .navbar .nav2 ul li button{
+
+      header .dropdownmenu .nav2 ul li button {
         height: 50px;
         width: 90px;
         background-color: white;
         border-radius: 10px;
       }
-      header .navbar .nav2 ul li .userbutton{
+
+      header .dropdownmenu .nav2 ul li .userbutton {
         width: auto;
         padding-left: 10px;
         padding-right: 10px;
       }
-      header .navbar .nav2 ul li button a{
+
+      header .dropdownmenu .nav2 ul li button a {
         color: black;
       }
-      .menu {
-        display: inline-block;
-        cursor: pointer;
-        padding: 30px;
-        position:static;
-        display: none;
+
+      .change-dropdown {
+        height: 500px;
+      }
+    }
+
+    @media screen and (max-width : 600px) {
+      header .logo {
+        width: 35%;
       }
 
-      .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: white;
-        margin: 6px 0;
-        transition: 0.4s;
+      header .navbar {
+        width: 65%;
+      }
+    }
+
+    @media screen and (max-width : 500px) {
+      header .logo {
+        width: 45%;
       }
 
-      .change .bar1 {
-        transform: translate(0, 11px) rotate(-45deg);
+      header .navbar {
+        width: 55%;
+      }
+    }
+
+    @media screen and (max-width : 400px) {
+      header .logo {
+        width: 60%;
       }
 
-      .change .bar2 {opacity: 0;}
+      header .navbar {
+        width: 40%;
+      }
+    }
 
-      .change .bar3 {
-        transform: translate(0, -11px) rotate(45deg);
-      }
-      @media screen and (max-width : 1005px) {
-        .menu{
-          display: block;
-        }
-        header{
-          height: 100px;
-        }
-        header .navbar{
-          justify-content: end;
-          animation-duration: 1s;
-        }
-        header .navbar .nav1{
-          display: none;
-        }
-        header .navbar .nav2{
-          display: none;
-        }
-        header .dropdownmenu .nav1{
-          height: 70%;
-        }
-        header .dropdownmenu .nav2{
-          margin-top: 0;
-        }
-        header .dropdownmenu{
-          height: 400px;
-          width: 100%;
-          animation-duration: 1s;
-        }
-        header .dropdownmenu ul{
-          padding: 20px;
-          text-align: center;
-        }
-        header .dropdownmenu ul li{
-          list-style: none;
-          margin-left: 20px;
-          margin-right: 20px;
-          padding: 10px;
-        }
-        header .dropdownmenu ul li a{
-          text-decoration: none;
-          color: white;
-          font-size: 20px;
-        }
-        header .dropdownmenu .nav2 ul li button{
-          height: 50px;
-          width: 90px;
-          background-color: white;
-          border-radius: 10px;
-        }
-        header .dropdownmenu .nav2 ul li .userbutton{
-          width: auto;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        header .dropdownmenu .nav2 ul li button a{
-          color: black;
-        }
-        .change-dropdown{
-          height: 500px;
-        }
-      }
-      @media screen and (max-width : 600px) {
-        header .logo{
-          width: 35%;
-        }
-        header .navbar{
-          width: 65%;
-        }
-      }
-      @media screen and (max-width : 500px) {
-        header .logo{
-          width: 45%;
-        }
-        header .navbar{
-          width: 55%;
-        }
-      }
-      @media screen and (max-width : 400px) {
-        header .logo{
-          width: 60%;
-        }
-        header .navbar{
-          width: 40%;
-        }
-      }
-    </style>
-    {% block style %}
-    {% endblock %}
-  </head>
-  <body>
-        <header id="dropdownmenu">
-          <div class="logo"><a href="/">Crowd Funding</a></div> 
-          <div class="navbar">
-            <div class="nav1">
-              <ul>
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                  <a href="/about/">About</a>
-                </li>
-                <li>
-                  <a href="/learn/">Learn</a>
-                </li>
-                <li>
-                  <a href="/blogs/">Blog</a>
-                </li>
-                <li>
-                  <a href="/contact/">Contact</a>
-                </li>
-              </ul>
-            </div>
-            <div class="nav2">
-              <ul>
-                <li>
-                  {% if user.is_authenticated %}
-                  <a href="/profile/">
-                  <button class="userbutton">
-                    <i style='font-size:24px' class='fas'>&#xf406;</i>
-                    {{username}}
-                  </button>
-                  </a>
-                  {% else %}
-                  <a href="/login/"><button>Login</button></a>
-                  {% endif %}
-                </li>
-              </ul>
-            </div>
-            <div class="menu" onclick="myFunction(this)">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </div>
-          </div>
-          <div class="dropdownmenu">
-            <div class="nav1">
-              <ul>
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                  <a href="/about/">About</a>
-                </li>
-                <li>
-                  <a href="/learn/">Learn</a>
-                </li>
-                <li>
-                  <a href="/blogs/">Blog</a>
-                </li>
-                <li>
-                  <a href="/contact/">Contact</a>
-                </li>
-              </ul>
-            </div>
-            <div class="nav2">
-              <ul>
-                <li>
-                  {% if user.is_authenticated %}
-                  <a href="/profile/">
-                  <button class="userbutton">
-                    <i style='font-size:24px' class='fas'>&#xf406;</i>
-                    {{username}}
-                  </button>
-                  </a>
-                  {% else %}
-                  <a href="/login/"><button>Login</button></a>
-                  {% endif %}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </header>
-    {% block body %}
-    {% endblock %}
-    <!-- <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script> -->
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
+    .messages {
+      display: block;
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+      margin-top: 100px;
+    }
+  </style>
+  {% block style %}
+  {% endblock %}
+</head>
+
+<body>
+  {% if messages %}
+  <ul class="messages" id="message">
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      {{message}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <header id="dropdownmenu">
+    <div class="logo"><a href="/">Crowd Funding</a></div>
+    <div class="navbar">
+      <div class="nav1">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          <li>
+            <a href="/learn/">Learn</a>
+          </li>
+          <li>
+            <a href="/blogs/">Blog</a>
+          </li>
+          <li>
+            <a href="/donate/">Donate</a>
+          </li>
+          <li>
+            <a href="/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav2">
+        <ul>
+          <li>
+            {% if user.is_authenticated %}
+            <a href="/profile/">
+              <button class="userbutton">
+                <i style='font-size:24px' class='fas'>&#xf406;</i>
+                {{user.first_name}}
+              </button>
+            </a>
+            {% else %}
+            <a href="/login/"><button>Login</button></a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+      <div class="menu" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>
+    <div class="dropdownmenu">
+      <div class="nav1">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          <li>
+            <a href="/learn/">Learn</a>
+          </li>
+          <li>
+            <a href="/blogs/">Blog</a>
+          </li>
+          <li>
+            <a href="/donate/">Donate</a>
+          </li>
+          <li>
+            <a href="/contact/">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav2">
+        <ul>
+          <li>
+            {% if user.is_authenticated %}
+            <a href="/profile/">
+              <button class="userbutton">
+                <i style='font-size:24px' class='fas'>&#xf406;</i>
+                {{user.first_name}}
+              </button>
+            </a>
+            {% else %}
+            <a href="/login/"><button>Login</button></a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  {% block body %}
+  {% endblock %}
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
 <script>
   function myFunction(x) {
     x.classList.toggle("change");
     document.getElementById("dropdownmenu").classList.toggle("change-dropdown");
-    document.getElementById("header_part").classList.toggle("none_header");
   }
+  setTimeout(() => {
+    if (document.getElementById("message")) {
+      document.getElementById("message").style.display = "none";
+    }
+  }, 3000);
 </script>
 {% block script %}
 {% endblock %}

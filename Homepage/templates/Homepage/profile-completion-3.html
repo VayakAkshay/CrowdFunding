@@ -1,0 +1,217 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile completion</title>
+    <link rel="icon" href="{% static 'images/cf.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/profile-completion-3.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="loader loader--active">
+        <div class="loader__icon">
+            <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
+                viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                <path opacity="0.2" fill="#000"
+                    d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z">
+                </path>
+                <path fill="#000"
+                    d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z">
+                </path>
+                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20"
+                    to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform>
+            </svg>
+        </div>
+        <div class="loader__tile"></div>
+        <div class="loader__tile"></div>
+        <div class="loader__tile"></div>
+        <div class="loader__tile"></div>
+        <div class="loader__tile"></div>
+    </div>
+    <div class="wrapper">
+        <div class="main">
+            <div class="container">
+                <div class="box">
+                    <h3 style="font-weight: bold;">Complete Your Profile!</h3>
+                    <p>Enter your Business Fields.</p>
+                </div>
+                <div class="box1">
+                    <img src="{% static 'images/fields.png' %}" alt="">
+                </div>
+                <div class="box2">
+                    <form action="/profile/" method="post">{% csrf_token %}
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Accounting">
+                            <label class="form-check-label" for="inlineCheckbox1">Accounting</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Economic">
+                            <label class="form-check-label" for="inlineCheckbox2">Economic</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Finance">
+                            <label class="form-check-label" for="inlineCheckbox3">Finance</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Marketting">
+                            <label class="form-check-label" for="inlineCheckbox4">Marketting</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Management">
+                            <label class="form-check-label" for="inlineCheckbox5">Management</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox6"
+                                value="Information Technology">
+                            <label class="form-check-label" for="inlineCheckbox6">Information Technology</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox7"
+                                value="International Business">
+                            <label class="form-check-label" for="inlineCheckbox7">International Business</label>
+                        </div><br><br>
+                        <input type="text" name="checkbox_val" id="checkbox_val" hidden>
+                        <div class="button">
+                            <button type="submit" id="submit-btn" class="btn10">
+                                <span>Submit</span>
+                                <div class="transition"></div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+<script>
+    var $loader = document.querySelector(".loader");
+
+    window.onload = function () {
+        $loader.classList.remove("loader--active");
+    };
+
+
+    if (document.getElementById("investor_radio") != null) {
+        document.getElementById("investor_radio").addEventListener('click', function () {
+            if (document.getElementById('investor_radio').checked) {
+                rate_value = document.getElementById('investor_radio').value;
+                document.getElementById("profile_type").value = rate_value;
+            }
+        })
+        document.getElementById("borrower_radio").addEventListener('click', function () {
+            if (document.getElementById('borrower_radio').checked) {
+                rate_value = document.getElementById('borrower_radio').value;
+                document.getElementById("profile_type").value = rate_value;
+            }
+        })
+    }
+    let field_str = [];
+    if (document.getElementById("inlineCheckbox1") != null) {
+        document.getElementById("inlineCheckbox1").addEventListener("click", () => {
+            if (document.getElementById("inlineCheckbox1").checked) {
+                chackbox_val = document.getElementById("inlineCheckbox1").value;
+                field_str.push(chackbox_val);
+            }
+            else {
+                chackbox_val = document.getElementById("inlineCheckbox1").value;
+                var index = field_str.indexOf(chackbox_val);
+                if (index !== -1) {
+                    field_str.splice(index, 1);
+                }
+            }
+        })
+        document.getElementById("inlineCheckbox2").addEventListener("click", () => {
+            if (document.getElementById("inlineCheckbox2").checked) {
+                chackbox_val = document.getElementById("inlineCheckbox2").value;
+                field_str.push(chackbox_val);
+            }
+            else {
+                chackbox_val = document.getElementById("inlineCheckbox2").value;
+                var index = field_str.indexOf(chackbox_val);
+                if (index !== -1) {
+                    field_str.splice(index, 1);
+                }
+            }
+        })
+        document.getElementById("inlineCheckbox3").addEventListener("click", () => {
+            if (document.getElementById("inlineCheckbox3").checked) {
+                chackbox_val = document.getElementById("inlineCheckbox3").value;
+                field_str.push(chackbox_val);
+            }
+            else {
+                chackbox_val = document.getElementById("inlineCheckbox3").value;
+                var index = field_str.indexOf(chackbox_val);
+                if (index !== -1) {
+                    field_str.splice(index, 1);
+                }
+            }
+        })
+        document.getElementById("inlineCheckbox4").addEventListener("click", () => {
+            if (document.getElementById("inlineCheckbox4").checked) {
+                chackbox_val = document.getElementById("inlineCheckbox4").value;
+                field_str.push(chackbox_val);
+            }
+            else {
+                chackbox_val = document.getElementById("inlineCheckbox4").value;
+                var index = field_str.indexOf(chackbox_val);
+                if (index !== -1) {
+                    field_str.splice(index, 1);
+                }
+            }
+        })
+        document.getElementById("inlineCheckbox5").addEventListener("click", () => {
+            if (document.getElementById("inlineCheckbox5").checked) {
+                chackbox_val = document.getElementById("inlineCheckbox5").value;
+                field_str.push(chackbox_val);
+            }
+            else {
+                chackbox_val = document.getElementById("inlineCheckbox5").value;
+                var index = field_str.indexOf(chackbox_val);
+                if (index !== -1) {
+                    field_str.splice(index, 1);
+                }
+            }
+        })
+        document.getElementById("inlineCheckbox6").addEventListener("click", () => {
+            if (document.getElementById("inlineCheckbox6").checked) {
+                chackbox_val = document.getElementById("inlineCheckbox6").value;
+                field_str.push(chackbox_val);
+            }
+            else {
+                chackbox_val = document.getElementById("inlineCheckbox6").value;
+                var index = field_str.indexOf(chackbox_val);
+                if (index !== -1) {
+                    field_str.splice(index, 1);
+                }
+            }
+        })
+        document.getElementById("inlineCheckbox7").addEventListener("click", () => {
+            if (document.getElementById("inlineCheckbox7").checked) {
+                chackbox_val = document.getElementById("inlineCheckbox7").value;
+                field_str.push(chackbox_val);
+            }
+            else {
+                chackbox_val = document.getElementById("inlineCheckbox7").value;
+                var index = field_str.indexOf(chackbox_val);
+                if (index !== -1) {
+                    field_str.splice(index, 1);
+                }
+            }
+        })
+    }
+    document.getElementById("submit-btn").addEventListener("click",()=>{
+        document.getElementById("checkbox_val").value = field_str;
+    })
+</script>

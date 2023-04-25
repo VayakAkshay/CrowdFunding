@@ -5,30 +5,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
 }
-.alert{
+
+.alert {
   width: 97%;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
+
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow: hidden;
   overflow-y: scroll;
 }
-body .content{
+
+body .content {
   height: 100vh;
   width: 100%;
-  background-image: url('{% static "images/background.png" %}');
   background-repeat: no-repeat;
   background-size: cover;
 }
-.main{
+
+.main {
   height: 115vh;
   width: auto;
   background-color: transparent;
@@ -36,7 +41,8 @@ body .content{
   justify-content: center;
   align-items: center;
 }
-body .content .container{
+
+body .content .container {
   height: 500px;
   width: 55%;
   background-color: white;
@@ -46,59 +52,69 @@ body .content .container{
   background-size: cover;
   display: flex;
 }
-body .content .container .content1{
+
+body .content .container .content1 {
   height: 100%;
   width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .content .container .content2{
+
+body .content .container .content2 {
   height: 100%;
   width: 55%;
   font-family: 'Rubik', sans-serif;
 }
-body .content .container .content2 .box1{
+
+body .content .container .content2 .box1 {
   height: 33%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .content .container .content2 .box2{
+
+body .content .container .content2 .box2 {
   height: 33%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body .content .container .content2 .box2 h1{
+
+body .content .container .content2 .box2 h1 {
   width: 80%;
 }
-body .content .container .content2 .box3{
+
+body .content .container .content2 .box3 {
   height: 33%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main{
+
+main {
   font-family: 'IBM Plex Sans', sans-serif;
 }
-main .heading{
+
+main .heading {
   height: 50px;
   width: auto;
   margin-top: 20px;
   text-align: center;
 }
-main .step1{
+
+main .step1 {
   height: 600px;
   width: auto;
   display: flex;
   margin-top: 20px;
   font-family: 'Overpass', sans-serif;
 }
-main .step1 .textdata{
+
+main .step1 .textdata {
   height: 100%;
   width: 50%;
   display: flex;
@@ -106,18 +122,22 @@ main .step1 .textdata{
   align-items: center;
   flex-wrap: wrap;
 }
-main .step1 .textdata .step{
+
+main .step1 .textdata .step {
   width: 200px;
 }
-main .step1 .image{
+
+main .step1 .image {
   height: 100%;
   width: 50%;
 }
-main .step1 .image img{
+
+main .step1 .image img {
   height: 100%;
   width: 100%;
 }
-main .step2{
+
+main .step2 {
   height: 650px;
   width: auto;
   display: flex;
@@ -125,7 +145,8 @@ main .step2{
   font-family: 'Overpass', sans-serif;
   background-size: cover;
 }
-main .step2 .textdata{
+
+main .step2 .textdata {
   height: 100%;
   width: 50%;
   display: flex;
@@ -133,21 +154,25 @@ main .step2 .textdata{
   align-items: center;
   flex-wrap: wrap;
 }
-main .step2 .textdata .step{
+
+main .step2 .textdata .step {
   width: 220px;
 }
-main .step2 .image{
+
+main .step2 .image {
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .step2 .image img{
+
+main .step2 .image img {
   height: 70%;
   width: 55%;
 }
-main .step3{
+
+main .step3 {
   height: 600px;
   width: auto;
   display: flex;
@@ -155,7 +180,8 @@ main .step3{
   font-family: 'Overpass', sans-serif;
   /* background-image: url('{% static "images/image4.png" %}'); */
 }
-main .step3 .textdata{
+
+main .step3 .textdata {
   height: 100%;
   width: 50%;
   display: flex;
@@ -163,20 +189,24 @@ main .step3 .textdata{
   align-items: center;
   flex-wrap: wrap;
 }
-main .step3 .textdata .step{
+
+main .step3 .textdata .step {
   width: 200px;
 }
-main .step3 .image{
+
+main .step3 .image {
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: right;
 }
-main .step3 .image img{
+
+main .step3 .image img {
   height: 80%;
   width: 80%;
 }
-main .step4{
+
+main .step4 {
   height: 650px;
   width: auto;
   display: flex;
@@ -185,7 +215,8 @@ main .step4{
   /* background-image: url('{% static "images/image5.png" %}'); */
   background-size: cover;
 }
-main .step4 .textdata{
+
+main .step4 .textdata {
   height: 100%;
   width: 50%;
   display: flex;
@@ -193,36 +224,43 @@ main .step4 .textdata{
   align-items: center;
   flex-wrap: wrap;
 }
-main .step4 .textdata .step{
+
+main .step4 .textdata .step {
   width: 220px;
 }
-main .step4 .image{
+
+main .step4 .image {
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .step4 .image img{
+
+main .step4 .image img {
   height: 80%;
   width: 85%;
 }
-figure{
+
+figure {
   height: 600px;
   margin-top: 20px;
   font-family: 'IBM Plex Sans', sans-serif;
 }
-figure .heading{
+
+figure .heading {
   height: 50px;
   width: auto;
   text-align: center;
 }
-figure .fields{
+
+figure .fields {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-figure .fields .boxs{
+
+figure .fields .boxs {
   height: 100%;
   width: 45%;
   display: flex;
@@ -232,7 +270,8 @@ figure .fields .boxs{
   padding: 50px;
   flex-wrap: wrap;
 }
-figure .fields .boxs .box{
+
+figure .fields .boxs .box {
   height: 30%;
   width: 45%;
   cursor: pointer;
@@ -240,41 +279,47 @@ figure .fields .boxs .box{
   border: none;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom right, #692ae7 , #3e0ca2);
+  background-image: linear-gradient(to bottom right, #692ae7, #3e0ca2);
   color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transition-duration: 1s;
   border-radius: 10px;
 }
-figure .fields .boxs .box:hover{
+
+figure .fields .boxs .box:hover {
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
-figure .fields .boxs .box .field{
+
+figure .fields .boxs .box .field {
   height: 90%;
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-figure .fields .overview{
+
+figure .fields .overview {
   height: 100%;
   width: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-figure .fields .overview .display{
+
+figure .fields .overview .display {
   height: 60%;
   width: 70%;
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
-figure .fields .overview .display .contentdata{
+
+figure .fields .overview .display .contentdata {
   height: 100%;
   width: 100%;
 }
-figure .fields .overview .display .imagepart{
+
+figure .fields .overview .display .imagepart {
   height: 30%;
   width: 100%;
   display: flex;
@@ -283,10 +328,12 @@ figure .fields .overview .display .imagepart{
   padding-left: 20px;
   padding-right: 20px;
 }
-figure .fields .overview .display .imagepart img{
+
+figure .fields .overview .display .imagepart img {
   height: 100%;
 }
-figure .fields .overview .display .contentpart{
+
+figure .fields .overview .display .contentpart {
   height: 70%;
   width: 100%;
   font-family: 'Work Sans', sans-serif;
@@ -294,19 +341,22 @@ figure .fields .overview .display .contentpart{
   justify-content: center;
   align-items: center;
 }
-figure .fields .overview .display .contentpart .maincontent{
+
+figure .fields .overview .display .contentpart .maincontent {
   width: 90%;
   text-align: center;
   padding-top: 20px;
 }
-.motivation{
+
+.motivation {
   height: 1000px;
   background-image: url('{% static "images/background-3.png" %}');
   background-size: 50% 100%;
   display: flex;
   margin-top: 100px;
 }
-.motivation .part1{
+
+.motivation .part1 {
   height: 100%;
   width: 40%;
   display: flex;
@@ -314,158 +364,185 @@ figure .fields .overview .display .contentpart .maincontent{
   align-items: center;
   font-family: 'Raleway', sans-serif;
 }
-.motivation .part1 .text{
+
+.motivation .part1 .text {
   height: 70%;
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.motivation .part1 .text h1{
+
+.motivation .part1 .text h1 {
   font-size: 50px;
 }
-.motivation .part2{
+
+.motivation .part2 {
   height: 100%;
   width: 60%;
   display: flex;
   font-family: 'Rubik', sans-serif;
   font-size: 17px;
-  font-weight:100;
+  font-weight: 100;
 }
-.motivation .part2 .contentpart1{
+
+.motivation .part2 .contentpart1 {
   height: 100%;
   width: 50%;
 }
-.motivation .part2 .contentpart1 .card1{
+
+.motivation .part2 .contentpart1 .card1 {
   height: 45%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.motivation .part2 .contentpart1 .card1 .cards{
+
+.motivation .part2 .contentpart1 .card1 .cards {
   height: 400px;
   width: 330px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
-.motivation .part2 .contentpart1 .card1 .cards img{
+
+.motivation .part2 .contentpart1 .card1 .cards img {
   height: 80%;
   width: 100%;
   border-radius: 10px;
 }
-.motivation .part2 .contentpart1 .card1 .cards .imagecontent{
+
+.motivation .part2 .contentpart1 .card1 .cards .imagecontent {
   height: 20%;
   width: 100%;
   padding-top: 10px;
   text-align: center;
 }
-.motivation .part2 .contentpart1 .card2{
+
+.motivation .part2 .contentpart1 .card2 {
   height: 55%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.motivation .part2 .contentpart1 .card2 .cards{
+
+.motivation .part2 .contentpart1 .card2 .cards {
   height: 400px;
   width: 330px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
-.motivation .part2 .contentpart1 .card2 .cards img{
+
+.motivation .part2 .contentpart1 .card2 .cards img {
   height: 80%;
   width: 100%;
   border-radius: 10px;
 }
-.motivation .part2 .contentpart1 .card2 .cards .imagecontent{
+
+.motivation .part2 .contentpart1 .card2 .cards .imagecontent {
   height: 20%;
   width: 100%;
   padding-top: 10px;
   text-align: center;
 }
-.motivation .part2 .contentpart2{
+
+.motivation .part2 .contentpart2 {
   height: 100%;
   width: 50%;
 }
-.motivation .part2 .contentpart2 .card1{
+
+.motivation .part2 .contentpart2 .card1 {
   height: 55%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.motivation .part2 .contentpart2 .card1 .cards{
+
+.motivation .part2 .contentpart2 .card1 .cards {
   height: 400px;
   width: 330px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
-.motivation .part2 .contentpart2 .card1 .cards img{
+
+.motivation .part2 .contentpart2 .card1 .cards img {
   height: 80%;
   width: 100%;
   border-radius: 10px;
 }
-.motivation .part2 .contentpart2 .card1 .cards .imagecontent{
+
+.motivation .part2 .contentpart2 .card1 .cards .imagecontent {
   height: 10%;
   width: 100%;
   padding-top: 10px;
   text-align: center;
 }
-.motivation .part2 .contentpart2 .card2{
+
+.motivation .part2 .contentpart2 .card2 {
   height: 45%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.motivation .part2 .contentpart2 .card2 .cards{
+
+.motivation .part2 .contentpart2 .card2 .cards {
   height: 400px;
   width: 330px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
-.motivation .part2 .contentpart2 .card2 .cards img{
+
+.motivation .part2 .contentpart2 .card2 .cards img {
   height: 80%;
   width: 100%;
   border-radius: 10px;
 }
-.motivation .part2 .contentpart2 .card2 .cards .imagecontent{
+
+.motivation .part2 .contentpart2 .card2 .cards .imagecontent {
   height: 20%;
   width: 100%;
   padding-top: 10px;
   text-align: center;
 }
-.userdesk{
+
+.userdesk {
   height: 700px;
   display: flex;
   font-family: 'Varela Round', sans-serif;
 }
-.userdesk .investor{
+
+.userdesk .investor {
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.userdesk .startup{
+
+.userdesk .startup {
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.userdesk .investor .box{
+
+.userdesk .investor .box {
   height: 80%;
   width: 70%;
   background-color: #0f428d;
   border-radius: 10px;
 }
-.userdesk .investor .box .imagepart{
+
+.userdesk .investor .box .imagepart {
   height: 30%;
   width: auto;
 }
-.userdesk .investor .box .maincontent{
+
+.userdesk .investor .box .maincontent {
   height: 40%;
   width: auto;
   color: white;
@@ -473,41 +550,48 @@ figure .fields .overview .display .contentpart .maincontent{
   padding-left: 10px;
   padding-right: 10px;
 }
-.userdesk .investor .box .button{
+
+.userdesk .investor .box .button {
   height: 30%;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.userdesk .investor .box .button button{
+
+.userdesk .investor .box .button button {
   height: 50px;
   width: 200px;
   font-size: 20px;
   border: none;
   border-radius: 10px;
 }
-.userdesk .investor .box .imagepart img{
+
+.userdesk .investor .box .imagepart img {
   height: 70%;
   margin-left: 50px;
   margin-top: 20px;
 }
-.userdesk .startup .box{
+
+.userdesk .startup .box {
   height: 80%;
   width: 70%;
   background-color: #0f428d;
   border-radius: 10px;
 }
-.userdesk .startup .box .imagepart{
+
+.userdesk .startup .box .imagepart {
   height: 30%;
   width: auto;
 }
-.userdesk .startup .box .imagepart img{
+
+.userdesk .startup .box .imagepart img {
   height: 70%;
   margin-left: 50px;
   margin-top: 20px;
 }
-.userdesk .startup .box .maincontent{
+
+.userdesk .startup .box .maincontent {
   height: 40%;
   width: auto;
   text-align: center;
@@ -515,23 +599,25 @@ figure .fields .overview .display .contentpart .maincontent{
   padding-right: 10px;
   color: white;
 }
-.userdesk .startup .box .button{
+
+.userdesk .startup .box .button {
   height: 30%;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.userdesk .startup .box .button button{
+
+.userdesk .startup .box .button button {
   height: 50px;
   width: 200px;
   font-size: 20px;
   border: none;
   border-radius: 10px;
 }
-footer{
+
+footer {
   height: 300px;
-  /* background-image: url('{% static "images/background-4.png" %}'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
@@ -541,7 +627,8 @@ footer{
   display: flex;
   flex-wrap: wrap;
 }
-footer .logopart{
+
+footer .logopart {
   height: 60%;
   width: 50%;
   color: white;
@@ -549,23 +636,27 @@ footer .logopart{
   justify-content: center;
   align-items: center;
 }
-footer .socialmedia{
+
+footer .socialmedia {
   height: 60%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-footer .socialmedia a{
+
+footer .socialmedia a {
   text-decoration: none;
   color: white;
   font-size: 20px;
   margin: 20px;
 }
-footer .socialmedia a:hover{
+
+footer .socialmedia a:hover {
   color: blueviolet;
 }
-footer .policy{
+
+footer .policy {
   height: auto;
   width: 100%;
   color: white;
@@ -573,483 +664,611 @@ footer .policy{
 }
 
 @media screen and (max-width : 1200px) {
-  body .content .container .content2 .box1 h4{
+  body .content .container .content2 .box1 h4 {
     font-size: 20px;
   }
-  body .content .container .content2 .box2 h1{
+
+  body .content .container .content2 .box2 h1 {
     font-size: 30px;
   }
-  body .content .container .content2 .box3 h4{
+
+  body .content .container .content2 .box3 h4 {
     font-size: 20px;
   }
-  main .step1{
+
+  main .step1 {
     height: 500px;
   }
-  main .step2{
+
+  main .step2 {
     height: 500px;
   }
-  main .step3{
+
+  main .step3 {
     height: 500px;
   }
-  main .step4{
+
+  main .step4 {
     height: 500px;
   }
 }
+
 @media screen and (max-width : 1100px) {
-  body .content .container{
+  body .content .container {
     width: 65%;
   }
-  figure .fields .boxs{
+
+  figure .fields .boxs {
     width: 50%;
   }
-  figure .fields .overview{
+
+  figure .fields .overview {
     width: 50%;
   }
-  figure .fields .overview .display{
+
+  figure .fields .overview .display {
     border: 1px solid black;
     width: 90%;
   }
-  .motivation{
+
+  .motivation {
     height: 1500px;
     background-size: 50% 100%;
     flex-wrap: wrap;
   }
-  .motivation .part1{
+
+  .motivation .part1 {
     height: 20%;
     width: 100%;
   }
-  .motivation .part1 .text{
+
+  .motivation .part1 .text {
     height: 70%;
     width: 90%;
   }
-  .motivation .part1 .text h1{
+
+  .motivation .part1 .text h1 {
     font-size: 50px;
   }
-  .motivation .part2{
+
+  .motivation .part2 {
     height: 80%;
     width: 100%;
     font-size: 17px;
   }
-  .motivation .part2 .contentpart1{
+
+  .motivation .part2 .contentpart1 {
     height: 100%;
     width: 50%;
   }
-  .motivation .part2 .contentpart1 .card1{
+
+  .motivation .part2 .contentpart1 .card1 {
     height: 45%;
     width: 100%;
   }
-  .motivation .part2 .contentpart1 .card1 .cards{
+
+  .motivation .part2 .contentpart1 .card1 .cards {
     height: 400px;
     width: 330px;
   }
-  .motivation .part2 .contentpart1 .card1 .cards img{
+
+  .motivation .part2 .contentpart1 .card1 .cards img {
     height: 80%;
     width: 100%;
   }
-  .motivation .part2 .contentpart1 .card1 .cards .imagecontent{
+
+  .motivation .part2 .contentpart1 .card1 .cards .imagecontent {
     height: 20%;
     width: 100%;
   }
-  .motivation .part2 .contentpart1 .card2{
+
+  .motivation .part2 .contentpart1 .card2 {
     height: 55%;
     width: 100%;
   }
-  .motivation .part2 .contentpart1 .card2 .cards{
+
+  .motivation .part2 .contentpart1 .card2 .cards {
     height: 400px;
     width: 330px;
   }
-  .motivation .part2 .contentpart1 .card2 .cards img{
+
+  .motivation .part2 .contentpart1 .card2 .cards img {
     height: 80%;
     width: 100%;
   }
-  .motivation .part2 .contentpart1 .card2 .cards .imagecontent{
+
+  .motivation .part2 .contentpart1 .card2 .cards .imagecontent {
     height: 20%;
     width: 100%;
   }
-  .motivation .part2 .contentpart2{
+
+  .motivation .part2 .contentpart2 {
     height: 100%;
     width: 50%;
   }
-  .motivation .part2 .contentpart2 .card1{
+
+  .motivation .part2 .contentpart2 .card1 {
     height: 55%;
     width: 100%;
   }
-  .motivation .part2 .contentpart2 .card1 .cards{
+
+  .motivation .part2 .contentpart2 .card1 .cards {
     height: 400px;
     width: 330px;
   }
-  .motivation .part2 .contentpart2 .card1 .cards img{
+
+  .motivation .part2 .contentpart2 .card1 .cards img {
     height: 80%;
     width: 100%;
   }
-  .motivation .part2 .contentpart2 .card1 .cards .imagecontent{
+
+  .motivation .part2 .contentpart2 .card1 .cards .imagecontent {
     height: 10%;
     width: 100%;
   }
-  .motivation .part2 .contentpart2 .card2{
+
+  .motivation .part2 .contentpart2 .card2 {
     height: 45%;
     width: 100%;
   }
-  .motivation .part2 .contentpart2 .card2 .cards{
+
+  .motivation .part2 .contentpart2 .card2 .cards {
     height: 400px;
     width: 330px;
   }
-  .motivation .part2 .contentpart2 .card2 .cards img{
+
+  .motivation .part2 .contentpart2 .card2 .cards img {
     height: 80%;
     width: 100%;
   }
-  .motivation .part2 .contentpart2 .card2 .cards .imagecontent{
+
+  .motivation .part2 .contentpart2 .card2 .cards .imagecontent {
     height: 20%;
     width: 100%;
   }
-  .userdesk .startup .box{
+
+  .userdesk .startup .box {
     width: 90%;
   }
-  .userdesk .investor .box{
+
+  .userdesk .investor .box {
     width: 90%;
   }
 }
+
 @media screen and (max-width : 1005px) {
-  body .content{
-    background-image: url('{% static "images/background-5.png" %}');
-    background-size: contain;
-  }
-  body .content .container{
+
+  body .content .container {
     height: 450px;
     width: 75%;
   }
-  body .content .container .content1 img{
+
+  body .content .container .content1 img {
     height: 400px;
   }
-  main .step1{
+
+  main .step1 {
     height: 400px;
   }
-  main .step2{
+
+  main .step2 {
     height: 400px;
   }
-  main .step3{
+
+  main .step3 {
     height: 400px;
   }
-  main .step4{
+
+  main .step4 {
     height: 400px;
   }
-  figure{
+
+  figure {
     height: 1100px;
   }
-  figure .fields{
+
+  figure .fields {
     height: 50%;
   }
-  figure .fields .boxs{
+
+  figure .fields .boxs {
     width: 100%;
     column-gap: 50px;
   }
-  figure .fields .overview{
+
+  figure .fields .overview {
     width: 100%;
   }
 }
+
 @media screen and (max-width : 800px) {
-  body .content .container{
+  body .content .container {
     height: 400px;
     width: 90%;
   }
-  body .content .container .content1 img{
+
+  body .content .container .content1 img {
     height: 350px;
   }
-  main .step1{
+
+  main .step1 {
     height: 300px;
   }
-  main .step2{
+
+  main .step2 {
     height: 300px;
   }
-  main .step3{
+
+  main .step3 {
     height: 300px;
   }
-  main .step4{
+
+  main .step4 {
     height: 300px;
   }
 }
+
 @media screen and (max-width : 700px) {
-  .motivation{
+  .motivation {
     height: auto;
   }
-  .motivation .part2{
+
+  .motivation .part2 {
     flex-wrap: wrap;
     padding: 30px;
   }
-  .motivation .part2 .contentpart1{
+
+  .motivation .part2 .contentpart1 {
     width: 100%;
   }
-  .motivation .part2 .contentpart2{
+
+  .motivation .part2 .contentpart2 {
     width: 100%;
   }
-  .motivation .part2 .contentpart1 .card1{
+
+  .motivation .part2 .contentpart1 .card1 {
     margin-bottom: 20px;
   }
-  .motivation .part2 .contentpart1 .card2{
+
+  .motivation .part2 .contentpart1 .card2 {
     margin-bottom: 20px;
   }
-  .motivation .part2 .contentpart2 .card1{
+
+  .motivation .part2 .contentpart2 .card1 {
     margin-bottom: 20px;
   }
-  .motivation .part2 .contentpart2 .card2{
+
+  .motivation .part2 .contentpart2 .card2 {
     margin-bottom: 20px;
   }
 }
+
 @media screen and (max-width : 600px) {
-  body .content .container{
+  body .content .container {
     width: 95%;
   }
-  figure{
+
+  figure {
     height: 1100px;
   }
-  figure .fields{
+
+  figure .fields {
     height: 50%;
   }
-  figure .fields .boxs{
+
+  figure .fields .boxs {
     width: 100%;
     column-gap: 10px;
     padding: 20px;
   }
-  figure .fields .boxs .box{
+
+  figure .fields .boxs .box {
     height: 30%;
     width: 48%;
   }
-  figure .fields .boxs .box .field h5{
+
+  figure .fields .boxs .box .field h5 {
     font-size: 18px;
   }
-  figure .fields .overview{
+
+  figure .fields .overview {
     width: 100%;
   }
-  .userdesk{
-  height: 1400px;
-  flex-wrap: wrap;
-}
-.userdesk .investor{
-  height: 50%;
-  width: 100%;
-}
-.userdesk .startup{
-  height: 50%;
-  width: 100%;
-}
-footer .logopart{
-  height: 20%;
-  width: 100%;
-}
-footer .socialmedia{
-  height: 10%;
-  width: 100%;
-}
-.motivation .part1 .text h1{
-  font-size: 40px;
-}
-}
-@media screen and (max-width : 550px) {
-  .main{
-    height: 90vh;
-  }
-  body .content .container{
-    height: 400px;
-    width: 95%;
-  }
-  body .content .container .content1 img{
-    height: 300px;
-    width: 100%;
-  }
-  body .content .container .content2 .box1 h4{
-    font-size: 15px;
-  }
-  body .content .container .content2 .box2 h1{
-    font-size: 25px;
-  }
-  body .content .container .content2 .box3 h4{
-    font-size: 15px;
-  }
-  main .step1{
-    height: 300px;
-  }
-  main .step1 .textdata{
-    width: 40%;
-  }
-  main .step1 .image{
-    width: 60%;
-  }
-  main .step1 .textdata .step{
-    padding: 10px;
-    width: 100%;
-  }
-  main .step2{
-    height: 300px;
-  }
-  main .step2 .textdata{
-    width: 40%;
-  }
-  main .step2 .image{
-    width: 60%;
-  }
-  main .step2 .textdata .step{
-    padding: 10px;
-    width: 100%;
-  }
-  main .step3{
-    height: 300px;
-  }
-  main .step3 .textdata{
-    width: 40%;
-  }
-  main .step3 .image{
-    width: 60%;
-  }
-  main .step3 .textdata .step{
-    padding: 10px;
-    width: 100%;
-  }
-  main .step4{
-    height: 300px;
-  }
-  main .step4 .textdata{
-    width: 40%;
-  }
-  main .step4 .image{
-    width: 60%;
-  }
-  main .step4 .textdata .step{
-    padding: 10px;
-    width: 100%;
-  }
-}
-@media screen and (max-width : 500px) {
-  body .content .container{
-    height: 550px;
+
+  .userdesk {
+    height: 1400px;
     flex-wrap: wrap;
-    margin-top: 60px;
-    background: linear-gradient(to top,white 50%,#5271ff 50%,#5271ff 100%);
   }
-  body .content .container .content1{
-    height: auto;
-    width: 100%;
-  }
-  body .content .container .content2{
+
+  .userdesk .investor {
     height: 50%;
     width: 100%;
   }
-  body .content .container .content2 .box1{
+
+  .userdesk .startup {
+    height: 50%;
+    width: 100%;
+  }
+
+  footer .logopart {
+    height: 20%;
+    width: 100%;
+  }
+
+  footer .socialmedia {
+    height: 10%;
+    width: 100%;
+  }
+
+  .motivation .part1 .text h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width : 550px) {
+  .main {
+    height: 90vh;
+  }
+
+  body .content .container {
+    height: 400px;
+    width: 95%;
+    margin-top: 150px;
+  }
+
+  body .content .container .content1 img {
+    height: 300px;
+    width: 100%;
+  }
+
+  body .content .container .content2 .box1 h4 {
+    font-size: 15px;
+  }
+
+  body .content .container .content2 .box2 h1 {
+    font-size: 25px;
+  }
+
+  body .content .container .content2 .box3 h4 {
+    font-size: 15px;
+  }
+
+  main .step1 {
+    height: 300px;
+  }
+
+  main .step1 .textdata {
+    width: 40%;
+  }
+
+  main .step1 .image {
+    width: 60%;
+  }
+
+  main .step1 .textdata .step {
+    padding: 10px;
+    width: 100%;
+  }
+
+  main .step2 {
+    height: 300px;
+  }
+
+  main .step2 .textdata {
+    width: 40%;
+  }
+
+  main .step2 .image {
+    width: 60%;
+  }
+
+  main .step2 .textdata .step {
+    padding: 10px;
+    width: 100%;
+  }
+
+  main .step3 {
+    height: 300px;
+  }
+
+  main .step3 .textdata {
+    width: 40%;
+  }
+
+  main .step3 .image {
+    width: 60%;
+  }
+
+  main .step3 .textdata .step {
+    padding: 10px;
+    width: 100%;
+  }
+
+  main .step4 {
+    height: 300px;
+  }
+
+  main .step4 .textdata {
+    width: 40%;
+  }
+
+  main .step4 .image {
+    width: 60%;
+  }
+
+  main .step4 .textdata .step {
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width : 500px) {
+  body .content .container {
+    height: 550px;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    background: linear-gradient(to top, white 50%, #5271ff 50%, #5271ff 100%);
+  }
+
+  body .content .container .content1 {
+    height: auto;
+    width: 100%;
+  }
+
+  body .content .container .content2 {
+    height: 50%;
+    width: 100%;
+  }
+
+  body .content .container .content2 .box1 {
+    text-align: center;
+    max-height: 70px;
+  }
+
+  body .content .container .content2 .box2 {
     text-align: center;
   }
-  body .content .container .content2 .box2{
+
+  body .content .container .content2 .box3 {
     text-align: center;
+    max-height: 70px;
   }
-  body .content .container .content2 .box3{
-    text-align: center;
-  }
-  figure .fields .overview .display{
+
+  figure .fields .overview .display {
     height: 80%;
   }
-  footer{
+
+  footer {
     height: 350px;
   }
 }
+
 @media screen and (max-width : 450px) {
-  main .step1{
+  main .step1 {
     height: 250px;
   }
-  main .step2{
+
+  main .step2 {
     height: 250px;
   }
-  main .step3{
+
+  main .step3 {
     height: 250px;
   }
-  main .step4{
+
+  main .step4 {
     height: 250px;
   }
 }
+
 @media screen and (max-width : 400px) {
-  figure .fields .overview .display{
+  figure .fields .overview .display {
     height: 90%;
   }
-  footer{
+
+  footer {
     height: 400px;
   }
-  figure .fields .overview .display .imagepart img{
+
+  figure .fields .overview .display .imagepart img {
     height: 70%;
   }
 }
+
 @media screen and (max-width : 350px) {
-  main .step1{
+  main .step1 {
     height: 500px;
     flex-wrap: wrap;
   }
-  main .step1 .textdata{
+
+  main .step1 .textdata {
     height: 30%;
     width: 100%;
     border-top: 1px solid green;
   }
-  main .step1 .image{
+
+  main .step1 .image {
     height: 70%;
     width: 100%;
     border-bottom: 1px solid green;
   }
-  main .step1 .textdata .step{
+
+  main .step1 .textdata .step {
     width: 100%;
   }
-  main .step2{
+
+  main .step2 {
     height: 500px;
     flex-wrap: wrap;
   }
-  main .step2 .textdata{
+
+  main .step2 .textdata {
     height: 30%;
     width: 100%;
     border-bottom: 1px solid green;
   }
-  main .step2 .image{
+
+  main .step2 .image {
     height: 70%;
     width: 100%;
   }
-  main .step2 .textdata .step{
+
+  main .step2 .textdata .step {
     width: 100%;
   }
-  main .step3{
+
+  main .step3 {
     height: 500px;
     flex-wrap: wrap;
   }
-  main .step3 .textdata{
+
+  main .step3 .textdata {
     height: 30%;
     width: 100%;
   }
-  main .step3 .image{
+
+  main .step3 .image {
     height: 70%;
     width: 100%;
     border-bottom: 1px solid green;
   }
-  main .step3 .textdata .step{
+
+  main .step3 .textdata .step {
     width: 100%;
   }
-  main .step4{
+
+  main .step4 {
     height: 500px;
     flex-wrap: wrap;
   }
-  main .step4 .textdata{
+
+  main .step4 .textdata {
     height: 30%;
     width: 100%;
     border-bottom: 1px solid green;
   }
-  main .step4 .image{
+
+  main .step4 .image {
     height: 70%;
     width: 100%;
   }
-  main .step4 .textdata .step{
+
+  main .step4 .textdata .step {
     width: 100%;
   }
-  figure .fields .overview .display{
+
+  figure .fields .overview .display {
     font-size: 15px;
   }
-  footer{
+
+  footer {
     height: 470px;
   }
 }
+
 @media screen and (max-width : 600px),
-      screen and (max-height: 700px) {
-  body .content.container{
+screen and (max-height: 700px) {
+  body .content.container {
     margin-top: 100px;
   }
 }

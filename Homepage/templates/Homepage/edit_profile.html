@@ -21,7 +21,7 @@
           align-items: center;
         }
         .container{
-          height: 400px;
+          height: auto;
           width: 50%;
           background-color: white;
           margin-top: 50px;
@@ -64,13 +64,17 @@
     <div class="container">
         <form action="/edit_profile/" method="post">{% csrf_token %}
             <label for="">First Name</label>
-            <input type="text" class="form-control" id="fname" name="fname" required>
+            <input type="text" class="form-control" value="{{user.first_name}}" id="fname" name="fname" required>
             <label for="">Last Name</label>
-            <input type="text" class="form-control" id="lname" name="lname" required>
+            <input type="text" class="form-control" id="lname" name="lname" value="{{user.last_name}}" required>
             <label for="">Mobile Number</label>
-            <input type="number" class="form-control" id="mnumber" name="mnumber" required>
+            <input type="number" class="form-control" id="mnumber" value="{{user.email}}" name="mnumber" required>
             <label for="">Email Address</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email" value="{{user.username}}" required>
+            <div class="mb-3">
+              <label for="" class="form-label">About Me</label>
+              <textarea class="form-control" name="aboutme" rows="3">{{desc}}</textarea>
+            </div>            
             <button type="submit" id="getdata" class="otpbtn btn btn-primary">Update</button><br><br>
           </form>
     </div>

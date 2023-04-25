@@ -11,4 +11,4 @@ class OTP_Data(models.Model):
     otp = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.email_id + " " + str(self.otp)
+        return f"{self.email_id} {str(self.otp)}"

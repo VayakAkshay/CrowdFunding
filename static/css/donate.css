@@ -1,0 +1,417 @@
+@font-face {
+    font-family: "Mona Sans";
+    src: url("https://assets.codepen.io/64/Mona-Sans.woff2") format("woff2 supports variations"), url("https://assets.codepen.io/64/Mona-Sans.woff2") format("woff2-variations");
+    font-weight: 100 1000;
+}
+
+@property --bg-1-x {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --bg-2-x {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --bg-2-y {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --bg-3-x {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --bg-3-y {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+:root {
+    --bg-color: hsl(240deg 10% 12%);
+    --bg-grain: url("https://assets.codepen.io/64/svgNoise2.svg");
+    --bg-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    --shadow-size: max(140px, 40vw);
+    --shadow-size-fallback: 40vw;
+    --shadow-blur: 60;
+    --color-1: #6328da;
+    --color-2: #ff1bf1;
+    --color-3: #008cea;
+    --bg-1-x: 0;
+    --bg-1-y: 0;
+    --bg-2-x: 0;
+    --bg-2-y: 0;
+    --bg-3-x: 0;
+    --bg-3-y: 0;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+    :root {
+        --color-1: color(display-p3 0.36 0.17 0.82);
+        --color-2: color(display-p3 0.95 0.04 0.95);
+        --color-3: color(display-p3 0.01 0.53 0.99);
+    }
+}
+
+@media (min-width: 960px) {
+    :root {
+        --shadow-size: max(72px, 25vw);
+        --shadow-size-fallback: 25vw;
+        --shadow-blur: 80;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    outline: calc(var(--debug) * 1px) dashed red;
+}
+
+*:before,
+*:after {
+    outline: calc(var(--debug) * 1px) dashed red;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Mona Sans", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background: var(--bg-color);
+    z-index: 1;
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle var(--shadow-size, var(--shadow-size-fallback)) at 20vw 0, var(--color-1, red) 100%, transparent 0), radial-gradient(circle var(--shadow-size, var(--shadow-size-fallback)) at 100vw 0, var(--color-2, red) 100%, transparent 0), radial-gradient(circle calc(var(--shadow-size, var(--shadow-size-fallback)) * 1.2) at 50vw 115vh, var(--color-3, red) 100%, transparent 0);
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    filter: blur(calc(var(--shadow-blur) * 1px));
+    mix-blend-mode: hue;
+}
+
+body:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    filter: contrast(145%) brightness(650%) invert(100%);
+    mix-blend-mode: screen;
+    background: var(--bg-grain);
+    background-size: 500px;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.main h3 {
+    color: white;
+    font-size: max(50px, 10vw);
+    mix-blend-mode: lighten;
+    font-weight: 650;
+    font-stretch: 110%;
+    letter-spacing: -0.04em;
+    background: var(--bg-grain), conic-gradient(from 140deg at calc(var(--bg-1-x) * 1%) 90%, #1a0d00, #00011a, #fffffa, #15009e, #d232aa, #fa8c3d, #fff480, #fffffa, #7ed4fb, #040d8b, #010014), radial-gradient(ellipse at calc(var(--bg-2-x) * 1%) calc(var(--bg-2-y) * 1%), white 12%, transparent 35%), radial-gradient(ellipse at calc(var(--bg-3-x) * 1%) calc(var(--bg-3-y) * 1%), #61a8fa, transparent 35%);
+    background-repeat: repeat;
+    background-size: 500px, cover;
+    background-blend-mode: color-burn;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    animation: bg 20s linear infinite alternate;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+:root {
+    --transition: 0.25s;
+    --spark: 1.8s;
+}
+
+body {
+    --active: 0;
+    background: hsl(260 calc(var(--active) * 97%) 6%);
+    display: grid;
+    place-items: center;
+    font-family: system-ui, sans-serif;
+    transition: background var(--transition);
+    overflow: hidden;
+}
+
+.main button {
+    --cut: 0.1em;
+    --active: 0;
+    --bg: radial-gradient(40% 50% at center 100%,
+            hsl(270 calc(var(--active) * 97%) 72% / var(--active)),
+            transparent),
+        radial-gradient(80% 100% at center 120%,
+            hsl(260 calc(var(--active) * 97%) 70% / var(--active)),
+            transparent),
+        hsl(260 calc(var(--active) * 97%) calc((var(--active) * 44%) + 12%));
+    background: var(--bg);
+    font-size: 2rem;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+    padding: 0.9em 1.3em;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    white-space: nowrap;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0 0 calc(var(--active) * 6em) calc(var(--active) * 3em) hsl(260 97% 61% / 0.75),
+        0 0.05em 0 0 hsl(260 calc(var(--active) * 97%) calc((var(--active) * 50%) + 30%)) inset,
+        0 -0.05em 0 0 hsl(260 calc(var(--active) * 97%) calc(var(--active) * 60%)) inset;
+    transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
+    scale: calc(1 + (var(--active) * 0.1));
+}
+
+.main button:active {
+    scale: 1;
+}
+
+svg {
+    overflow: visible !important;
+}
+
+.sparkle path {
+    color: hsl(0 0% calc((var(--active, 0) * 70%) + var(--base)));
+    transform-box: fill-box;
+    transform-origin: center;
+    fill: currentColor;
+    stroke: currentColor;
+    animation-delay: calc((var(--transition) * 1.5) + (var(--delay) * 1s));
+    animation-duration: 0.6s;
+    transition: color var(--transition);
+}
+
+.main button:is(:hover, :focus-visible) path {
+    animation-name: bounce;
+}
+
+@keyframes bounce {
+
+    35%,
+    65% {
+        scale: var(--scale);
+    }
+}
+
+.sparkle path:nth-of-type(1) {
+    --scale: 0.5;
+    --delay: 0.1;
+    --base: 40%;
+}
+
+.sparkle path:nth-of-type(2) {
+    --scale: 1.5;
+    --delay: 0.2;
+    --base: 20%;
+}
+
+.sparkle path:nth-of-type(3) {
+    --scale: 2.5;
+    --delay: 0.35;
+    --base: 30%;
+}
+
+.main button:before {
+    content: "";
+    position: absolute;
+    inset: -0.25em;
+    z-index: -1;
+    border: 0.25em solid hsl(260 97% 50% / 0.5);
+    border-radius: 100px;
+    opacity: var(--active, 0);
+    transition: opacity var(--transition);
+}
+
+.spark {
+    position: absolute;
+    inset: 0;
+    border-radius: 100px;
+    rotate: 0deg;
+    overflow: hidden;
+    mask: linear-gradient(white, transparent 50%);
+    animation: flip calc(var(--spark) * 2) infinite steps(2, end);
+}
+
+@keyframes flip {
+    to {
+        rotate: 360deg;
+    }
+}
+
+.spark:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    aspect-ratio: 1;
+    top: 0%;
+    left: 50%;
+    z-index: -1;
+    translate: -50% -15%;
+    rotate: 0;
+    transform: rotate(-90deg);
+    opacity: calc((var(--active)) + 0.4);
+    background: conic-gradient(from 0deg, transparent 0 340deg, white 360deg);
+    transition: opacity var(--transition);
+    animation: rotate var(--spark) linear infinite both;
+}
+
+.spark:after {
+    content: "";
+    position: absolute;
+    inset: var(--cut);
+    border-radius: 100px;
+}
+
+.backdrop {
+    position: absolute;
+    inset: var(--cut);
+    background: var(--bg);
+    border-radius: 100px;
+    transition: background var(--transition);
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@supports (selector(:has(:is(+ *)))) {
+    body:has(button:is(:hover, :focus-visible)) {
+        --active: 1;
+        --play-state: running;
+    }
+
+    .bodydrop {
+        display: none;
+    }
+}
+
+.main button:is(:hover, :focus-visible)~ :is(.bodydrop, .particle-pen) {
+    --active: 1;
+    --play-state: runnin;
+}
+
+.bodydrop {
+    background: hsl(260 calc(var(--active) * 97%) 6%);
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.main button:is(:hover, :focus-visible) {
+    --active: 1;
+    --play-state: running;
+}
+
+.sparkle-button {
+    position: relative;
+}
+
+.particle-pen {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    -webkit-mask: radial-gradient(white, transparent 65%);
+    z-index: -1;
+    opacity: var(--active, 0);
+    transition: opacity var(--transition);
+}
+
+.particle {
+    fill: white;
+    width: calc(var(--size, 0.25) * 1rem);
+    aspect-ratio: 1;
+    position: absolute;
+    top: calc(var(--y) * 1%);
+    left: calc(var(--x) * 1%);
+    opacity: var(--alpha, 1);
+    animation: float-out calc(var(--duration, 1) * 1s) calc(var(--delay) * -1s) infinite linear;
+    transform-origin: var(--origin-x, 1000%) var(--origin-y, 1000%);
+    z-index: -1;
+    animation-play-state: var(--play-state, paused);
+}
+
+.particle path {
+    fill: hsl(0 0% 90%);
+    stroke: none;
+}
+
+.particle:nth-of-type(even) {
+    animation-direction: reverse;
+}
+
+@keyframes float-out {
+    to {
+        rotate: 360deg;
+    }
+}
+
+.main .text {
+    translate: 2% -6%;
+    letter-spacing: 0.01ch;
+    background: linear-gradient(90deg,
+            hsl(0 0% calc((var(--active) * 100%) + 65%)),
+            hsl(0 0% calc((var(--active) * 100%) + 26%)));
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background var(--transition);
+}
+
+.main button svg {
+    inline-size: 1.25em;
+    translate: -25% -5%;
+}
